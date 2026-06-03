@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1b840be1-17e7-4a49-9611-da39875f02a2",
+    "message": "find us on instagram @tshkelah.com",
+    "link_url": null,
+    "link_label": null,
+    "is_active": true,
+    "sort_order": 4
+  },
+  {
+    "id": "18f424b3-16f6-4712-aec0-649e4c8f5e30",
+    "message": "the intern is testing the app",
+    "link_url": null,
+    "link_label": null,
+    "is_active": true,
+    "sort_order": 5
+  }
+]
