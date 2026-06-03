@@ -146,17 +146,17 @@ export default function RestaurantDetail({ restaurant, activeOffers, galleryPhot
         </div>
       </div>
 
-      {activeOffers.length > 0 ? (
-        <div className="space-y-10">
-          {/* Gallery */}
-          {galleryPhotos.length > 0 && (
-            <section className="space-y-4">
-              <h2 className="text-xl font-semibold">{t.restaurant.whatsOnDeal}</h2>
-              <PhotoGallery photos={galleryPhotos} />
-            </section>
-          )}
+      <div className="space-y-10">
+        {/* Gallery */}
+        {galleryPhotos.length > 0 && (
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold">{t.restaurant.whatsOnDeal}</h2>
+            <PhotoGallery photos={galleryPhotos} />
+          </section>
+        )}
 
-          {/* Offers */}
+        {/* Offers */}
+        {activeOffers.length > 0 ? (
           <section className="space-y-4">
             <h2 className="text-xl font-semibold">{t.restaurant.offerDetails}</h2>
             <div className="space-y-3">
@@ -211,10 +211,10 @@ export default function RestaurantDetail({ restaurant, activeOffers, galleryPhot
               ))}
             </div>
           </section>
-        </div>
-      ) : (
-        <p className="text-muted-foreground">{t.restaurant.noActiveOffers}</p>
-      )}
+        ) : (
+          <p className="text-muted-foreground">{t.restaurant.noActiveOffers}</p>
+        )}
+      </div>
     </div>
   )
 }

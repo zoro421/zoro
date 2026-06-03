@@ -44,11 +44,10 @@ function DealsPageInner() {
     )
   }
 
-  const withOffers = filtered.filter((r) => r.offers?.some((o) => o.is_active))
-  const total = withOffers.length
+  const total = filtered.length
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE))
   const safePage = Math.min(currentPage, totalPages)
-  const paginated = withOffers.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
+  const paginated = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE)
   const hasActiveFilters = !!(q || emirate || cuisine || dining || discount)
 
   return (

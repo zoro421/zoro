@@ -3,11 +3,11 @@ import { restaurants } from '@/lib/data'
 
 export default function HomePage() {
   const featured = restaurants.filter(
-    (r) => r.listing_package === 'premium' && r.offers?.some((o) => o.is_active)
+    (r) => r.is_approved && r.is_active && r.listing_package === 'premium'
   ).sort((a, b) => (b.view_count ?? 0) - (a.view_count ?? 0))
 
   const basicRestaurants = restaurants.filter(
-    (r) => r.listing_package === 'basic' && r.offers?.some((o) => o.is_active)
+    (r) => r.is_approved && r.is_active && r.listing_package === 'basic'
   )
 
   const totalRestaurants = restaurants.length
