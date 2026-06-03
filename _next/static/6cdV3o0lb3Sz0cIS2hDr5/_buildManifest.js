@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/zoro//_next/:path+",
+        "destination": "/zoro/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
