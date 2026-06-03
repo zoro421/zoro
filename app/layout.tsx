@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Cairo, Montserrat } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
 import { Providers } from '@/components/providers'
+import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
+import { CookieBanner } from '@/components/layout/CookieBanner'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -30,6 +32,8 @@ export default function RootLayout({
         <Providers>
           {children}
           <Toaster richColors position="top-right" />
+          <CookieBanner />
+          <GoogleAnalytics />
         </Providers>
       </body>
     </html>

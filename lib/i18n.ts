@@ -60,6 +60,7 @@ const en = {
     privacy: 'Privacy',
     terms: 'Terms',
     admin: 'Admin',
+    cookiePreferences: 'Cookie Preferences',
     rights: 'All rights reserved.',
   },
   dealsPage: {
@@ -182,6 +183,7 @@ const ar: typeof en = {
     privacy: 'الخصوصية',
     terms: 'الشروط',
     admin: 'المشرف',
+    cookiePreferences: 'إعدادات الكوكيز',
     rights: 'جميع الحقوق محفوظة.',
   },
   dealsPage: {

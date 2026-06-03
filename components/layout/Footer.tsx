@@ -39,6 +39,14 @@ export default function Footer() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="/privacy" className="hover:text-primary transition-colors">{t.footer.privacy}</Link></li>
                 <li><Link href="/terms" className="hover:text-primary transition-colors">{t.footer.terms}</Link></li>
+                <li>
+                  <button
+                    onClick={() => window.dispatchEvent(new Event('show-cookie-preferences'))}
+                    className="hover:text-primary transition-colors text-left"
+                  >
+                    {t.footer.cookiePreferences}
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
