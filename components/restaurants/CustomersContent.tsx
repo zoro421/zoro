@@ -5,15 +5,16 @@ import Link from 'next/link'
 import { ChevronDown, Mail, Search, MapPin, Utensils } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { BRAND } from '@/lib/brand'
 
 const highlights = [
   {
     title: 'Completely Free',
-    desc: 'No subscription. No hidden fees. Browsing deals on Ozwati is free.',
+    desc: `No subscription. No hidden fees. Browsing deals on ${BRAND.name} is free.`,
   },
   {
     title: 'No App Needed',
-    desc: 'Ozwati works in any browser on your phone, tablet, or computer. Nothing to download or install.',
+    desc: `${BRAND.name} works in any browser on your phone, tablet, or computer. Nothing to download or install.`,
   },
   {
     title: 'No Account Required',
@@ -25,7 +26,7 @@ const howToUse = [
   {
     Icon: Search,
     title: 'Browse deals',
-    desc: 'Filter by emirate, cuisine type, or discount percentage. Find exactly what you\'re in the mood for.',
+    desc: "Filter by emirate, category, or discount. Find exactly what you're in the mood for.",
   },
   {
     Icon: MapPin,
@@ -35,42 +36,42 @@ const howToUse = [
   {
     Icon: Utensils,
     title: 'Walk in & enjoy',
-    desc: 'Head to the spot and mention you found the offer on Ozwati. No voucher, no booking, no code.',
+    desc: `Head to the spot and mention you found the offer on ${BRAND.name}. No voucher, no booking, no code.`,
   },
 ]
 
 const faqs = [
   {
-    q: 'Is Ozwati free for customers?',
-    a: 'Yes — 100% free. There is no subscription, no credits, and no hidden fees. Browsing and using deals on Ozwati costs nothing.',
+    q: `Is ${BRAND.name} free for customers?`,
+    a: `Yes — 100% free. There is no subscription, no credits, and no hidden fees. Browsing and using deals on ${BRAND.name} costs nothing.`,
   },
   {
     q: 'Do I need to download an app?',
-    a: 'No app needed. Ozwati runs entirely in your browser. Open it on any device — phone, tablet, or desktop — and start browsing immediately. Nothing to install.',
+    a: `No app needed. ${BRAND.name} runs entirely in your browser. Open it on any device — phone, tablet, or desktop — and start browsing immediately. Nothing to install.`,
   },
   {
     q: 'Do I need to create an account?',
-    a: 'No. You can view all restaurants and active deals without signing up. An account is optional.',
+    a: 'No. You can view all listings and active deals without signing up.',
   },
   {
     q: 'How do I use a deal?',
-    a: 'Browse, find a restaurant you like, then simply walk in and tell the staff you found the deal on Ozwati. No voucher, no QR code, no booking required.',
+    a: `Browse, find a spot you like, then simply walk in and tell the staff you found the deal on ${BRAND.name}. No voucher, no QR code, no booking required.`,
   },
   {
     q: 'How often are deals updated?',
-    a: 'Deals are updated daily. Each listing shows an expiry date so you always know what\'s still valid. Expired deals are automatically removed.',
+    a: "Deals are updated daily. Each listing shows an expiry date so you always know what's still valid. Expired deals are automatically removed.",
   },
   {
     q: 'Which areas of the UAE are covered?',
-    a: 'We cover Dubai, Abu Dhabi, Sharjah, Ajman, and other emirates. New restaurants and locations are added regularly.',
+    a: 'We cover Dubai, Abu Dhabi, Sharjah, Ajman, and other emirates. New listings and locations are added regularly.',
   },
   {
-    q: 'Is the app available in Arabic?',
+    q: 'Is the interface available in Arabic?',
     a: 'Yes. Tap the language toggle in the navigation bar to switch the entire interface to Arabic.',
   },
   {
     q: 'What types of deals are available?',
-    a: 'You\'ll find percentage discounts (e.g. 30% OFF), fixed discounts, buy-one-get-one deals, set menus, and other special walk-in offers.',
+    a: "You'll find percentage discounts (e.g. 30% OFF), fixed discounts, buy-one-get-one deals, set menus, and other special walk-in offers.",
   },
 ]
 
@@ -80,7 +81,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border/60 last:border-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left font-medium text-base hover:text-primary transition-colors"
+        className="w-full flex items-center justify-between gap-4 py-5 text-left font-medium text-base hover:text-primary transition-colors cursor-pointer"
       >
         <span>{q}</span>
         <ChevronDown className={cn(
@@ -109,7 +110,7 @@ export default function CustomersContent() {
             Everything you need<br /> to know
           </h1>
           <p className="animate-fade-up [animation-delay:80ms] text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
-            Ozwati is the simplest way to discover and walk into the best spots across the UAE — with zero cost and zero friction.
+            {BRAND.name} is the simplest way to discover and walk into the best spots across the UAE — with zero cost and zero friction.
           </p>
         </div>
       </section>
@@ -128,7 +129,7 @@ export default function CustomersContent() {
         </div>
       </section>
 
-      {/* How to use */}
+      {/* How it works */}
       <section className="py-20 bg-muted/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-2">
@@ -172,9 +173,9 @@ export default function CustomersContent() {
         <div className="mx-auto max-w-xl px-4 sm:px-6 text-center space-y-5">
           <h2 className="text-2xl font-bold">Still have questions?</h2>
           <p className="text-muted-foreground text-base">We&apos;re happy to help. Reach out and we&apos;ll get back to you quickly.</p>
-          <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg', variant: 'outline' })}>
+          <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg', variant: 'outline' })}>
             <Mail className="h-4 w-4 me-2" />
-            info@ozwati.com
+            {BRAND.email}
           </Link>
         </div>
       </section>

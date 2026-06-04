@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Cairo, Montserrat } from 'next/font/google'
+import { BRAND } from '@/lib/brand'
 import { Toaster } from '@/components/ui/sonner'
 import { Providers } from '@/components/providers'
 import { GoogleAnalytics } from '@/components/analytics/GoogleAnalytics'
@@ -12,19 +13,19 @@ const cairo = Cairo({ variable: '--font-cairo', subsets: ['arabic', 'latin'], we
 const montserrat = Montserrat({ variable: '--font-montserrat', subsets: ['latin'], weight: ['700'], display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Ozwati — Walk-in Deals & Offers in UAE',
+  title: `${BRAND.name} — Walk-in Deals & Offers in UAE`,
   description:
     'Discover the best walk-in deals, discounts, and exclusive offers across Dubai, Abu Dhabi, and the UAE. Updated daily.',
-  keywords: 'deals UAE, offers Dubai, walk-in discounts, Abu Dhabi deals, Ozwati',
-  metadataBase: new URL('https://www.ozwati.com'),
+  keywords: `deals UAE, offers Dubai, walk-in discounts, Abu Dhabi deals, ${BRAND.name}`,
+  metadataBase: new URL(BRAND.url),
   alternates: {
-    canonical: 'https://www.ozwati.com',
+    canonical: BRAND.url,
   },
   openGraph: {
-    title: 'Ozwati — Walk-in Deals & Offers in UAE',
+    title: `${BRAND.name} — Walk-in Deals & Offers in UAE`,
     description: 'Discover the best walk-in deals across the UAE.',
     type: 'website',
-    url: 'https://www.ozwati.com',
+    url: BRAND.url,
   },
 }
 

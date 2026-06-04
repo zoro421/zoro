@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Mail, Users, Zap, TrendingUp, CheckCircle } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
+import { BRAND } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'For Businesses — Ozwati',
-  description: 'List your place on Ozwati and get discovered by thousands of UAE visitors looking for walk-in deals.',
+  title: `For Businesses — ${BRAND.name}`,
+  description: `List your place on ${BRAND.name} and get discovered by thousands of UAE visitors looking for walk-in deals.`,
 }
 
 const benefits = [
@@ -29,7 +30,7 @@ const benefits = [
 const steps = [
   {
     title: 'Send us your details',
-    desc: 'Email your business name, location, phone number, and current walk-in offer to info@ozwati.com.',
+    desc: `Email your business name, location, phone number, and current walk-in offer to ${BRAND.email}.`,
   },
   {
     title: 'We review & set up',
@@ -61,9 +62,9 @@ export default function BusinessPage() {
             Our goal is to spotlight the potential of local UAE businesses — connecting them with visitors who are ready to walk in, right now.
           </p>
           <div className="animate-fade-up [animation-delay:240ms]">
-            <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg' })}>
+            <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg' })}>
               <Mail className="h-4 w-4 me-2" />
-              Get listed — info@ozwati.com
+              Get listed — {BRAND.email}
             </Link>
           </div>
         </div>
@@ -82,7 +83,7 @@ export default function BusinessPage() {
                 Built to spotlight local businesses
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Ozwati was built with one belief: great local businesses deserve to be found. Not just the big chains — the neighbourhood gem, the family-run spot, the place doing something nobody else does.
+                {BRAND.name} was built with one belief: great local businesses deserve to be found. Not just the big chains — the neighbourhood gem, the family-run spot, the place doing something nobody else does.
               </p>
               <p className="text-muted-foreground text-base leading-relaxed">
                 We built a platform that makes it effortless for UAE visitors to discover local spots and walk straight in. No apps. No vouchers. No friction — just great experiences happening every day.
@@ -138,17 +139,17 @@ export default function BusinessPage() {
                 color: 'rgba(255,255,255,0.025)',
                 lineHeight: 1,
                 whiteSpace: 'nowrap',
-              }}>عزوتي</span>
+              }}>{BRAND.nameAr}</span>
             </div>
             <div className="relative space-y-4">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Ready to be discovered?</h2>
               <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
-                Email us your business name, location, and current offer. We&apos;ll get you listed within 24 hours.
+                Email us your business name, location, and current offer at {BRAND.email}. We&apos;ll get you listed within 24 hours.
               </p>
               <div className="pt-2">
-                <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg' })}>
+                <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg' })}>
                   <Mail className="h-4 w-4 me-2" />
-                  info@ozwati.com
+                  {BRAND.email}
                 </Link>
               </div>
             </div>

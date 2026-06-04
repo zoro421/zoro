@@ -1,3 +1,5 @@
+import { BRAND } from './brand'
+
 const en = {
   nav: {
     browseDeals: 'Home',
@@ -25,7 +27,7 @@ const en = {
     steps: [
       { step: '01', title: 'Browse', desc: 'Filter by emirate, category, or discount. Find deals that match your mood and location.' },
       { step: '02', title: 'Pick a spot', desc: 'Check the deal details, browse photos, and get directions. All in one place.' },
-      { step: '03', title: 'Walk in & enjoy', desc: 'No voucher, no booking, no app needed. Just walk in and mention you found it on Ozwati.' },
+      { step: '03', title: 'Walk in & enjoy', desc: `No voucher, no booking, no app needed. Just walk in and mention you found it on ${BRAND.name}.` },
     ],
   },
   deals: {
@@ -128,7 +130,7 @@ const ar: typeof en = {
     steps: [
       { step: '٠١', title: 'تصفح', desc: 'صفّح حسب الإمارة أو الفئة أو الخصم. ابحث عن العروض التي تناسب مزاجك وموقعك.' },
       { step: '٠٢', title: 'اختر مكاناً', desc: 'اطّلع على تفاصيل الصفقة، تصفح الصور، واحصل على الاتجاهات — كل ذلك في مكان واحد.' },
-      { step: '٠٣', title: 'احضر واستمتع', desc: 'لا قسيمة، لا حجز، لا تطبيق. فقط احضر وأخبرهم أنك وجدت العرض على عزوتي.' },
+      { step: '٠٣', title: 'احضر واستمتع', desc: `لا قسيمة، لا حجز، لا تطبيق. فقط احضر وأخبرهم أنك وجدت العرض على ${BRAND.nameAr}.` },
     ],
   },
   deals: {

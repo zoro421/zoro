@@ -1,10 +1,11 @@
 import { restaurants } from '@/lib/data'
 import type { MetadataRoute } from 'next'
+import { BRAND } from '@/lib/brand'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.ozwati.com'
+  const baseUrl = BRAND.url
 
   const restaurantUrls = restaurants
     .filter((r) => r.is_approved && r.is_active)

@@ -2,9 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Mail } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
+import { BRAND } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'List Your Place — Ozwati',
+  title: `List Your Place — ${BRAND.name}`,
   description: 'Get your business and walk-in deals in front of thousands of visitors across the UAE.',
 }
 
@@ -27,11 +28,11 @@ export default function ListYourRestaurantPage() {
             </p>
           </div>
           <Link
-            href="mailto:info@ozwati.com"
+            href={`mailto:${BRAND.email}`}
             className={buttonVariants({ size: 'lg' })}
           >
             <Mail className="h-4 w-4 mr-2" />
-            info@ozwati.com
+            {BRAND.email}
           </Link>
         </div>
       </div>

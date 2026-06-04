@@ -1,3 +1,5 @@
+import { BRAND } from '@/lib/brand'
+
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
 }
@@ -23,7 +25,7 @@ export default function Logo({ size = 'md' }: LogoProps) {
           paddingBottom: '0.1em',
         }}
       >
-        عزوتي
+        {BRAND.nameAr}
       </span>
       <span
         style={{
@@ -35,7 +37,7 @@ export default function Logo({ size = 'md' }: LogoProps) {
         }}
         className="text-[#1C1410] dark:text-[#EAA030]"
       >
-        OZWATI
+        {BRAND.nameDisplay}
       </span>
     </div>
   )

@@ -24,6 +24,12 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_GA_ID: ${{ vars.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_APP_NAME: ${{ secrets.APP_NAME }}
+          NEXT_PUBLIC_APP_NAME_AR: ${{ secrets.APP_NAME_AR }}
+          NEXT_PUBLIC_APP_NAME_DISPLAY: ${{ secrets.APP_NAME_DISPLAY }}
+          NEXT_PUBLIC_APP_EMAIL: ${{ secrets.APP_EMAIL }}
+          NEXT_PUBLIC_APP_URL: ${{ secrets.APP_URL }}
+          NEXT_PUBLIC_APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
 
       - uses: peaceiris/actions-gh-pages@v4
         with:

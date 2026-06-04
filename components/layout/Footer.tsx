@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useLang } from '@/lib/language-context'
 import Logo from '@/components/ui/Logo'
+import { BRAND } from '@/lib/brand'
 
 export default function Footer() {
   const { t } = useLang()
@@ -51,7 +52,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border/40 text-xs text-muted-foreground text-center md:text-start">
-          <p>© {new Date().getFullYear()} Ozwati. {t.footer.rights}</p>
+          <p>© {new Date().getFullYear()} {BRAND.name}. {t.footer.rights}</p>
         </div>
       </div>
     </footer>

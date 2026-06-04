@@ -1,10 +1,11 @@
 import type { MetadataRoute } from 'next'
+import { BRAND } from '@/lib/brand'
 
 export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: '*', allow: '/' },
-    sitemap: 'https://www.ozwati.com/sitemap.xml',
+    sitemap: `${BRAND.url}/sitemap.xml`,
   }
 }

@@ -3,6 +3,7 @@
 import { Share } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { BRAND } from '@/lib/brand'
 
 interface ShareButtonProps {
   restaurantName: string
@@ -14,7 +15,7 @@ interface ShareButtonProps {
 export default function ShareButton({ restaurantName, slug, className, variant = 'icon' }: ShareButtonProps) {
   const handleShare = () => {
     const url = `${window.location.origin}/restaurants/${slug}`
-    const text = `Check out this deal at ${restaurantName} on Tashkelah!`
+    const text = `Check out this deal at ${restaurantName} on ${BRAND.name}!`
 
     if (navigator.share) {
       navigator.share({ title: restaurantName, text, url }).catch(() => {})
@@ -42,7 +43,7 @@ export default function ShareButton({ restaurantName, slug, className, variant =
       onClick={handleShare}
       aria-label="Share"
       className={cn(
-        'h-8 w-8 flex items-center justify-center rounded-full',
+        'h-8 w-8 flex items-center justify-center rounded-full cursor-pointer',
         'text-muted-foreground hover:text-foreground hover:bg-muted transition-colors',
         className
       )}
