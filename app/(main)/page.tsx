@@ -2,23 +2,17 @@ import HomeContent from '@/components/restaurants/HomeContent'
 import { restaurants } from '@/lib/data'
 
 export default function HomePage() {
-  const featured = restaurants.filter(
-    (r) => r.is_approved && r.is_active && r.listing_package === 'premium'
-  ).sort((a, b) => (b.view_count ?? 0) - (a.view_count ?? 0))
+  const active = restaurants.filter((r) => r.is_approved && r.is_active)
 
-  const basicRestaurants = restaurants.filter(
-    (r) => r.is_approved && r.is_active && r.listing_package === 'basic'
-  )
+  const vip = active
+    .filter((r) => r.listing_package === 'vip')
+    .sort((a, b) => (b.view_count ?? 0) - (a.view_count ?? 0))
 
-  const totalRestaurants = restaurants.length
-  const totalDeals = restaurants.reduce((acc, r) => acc + (r.offers?.filter((o) => o.is_active).length ?? 0), 0)
+  const featured = active
+    .filter((r) => r.listing_package === 'premium')
+    .sort((a, b) => (b.view_count ?? 0) - (a.view_count ?? 0))
 
-  return (
-    <HomeContent
-      featured={featured}
-      basicRestaurants={basicRestaurants}
-      totalRestaurants={totalRestaurants}
-      totalDeals={totalDeals}
-    />
-  )
+  const basicRestaurants = active.filter((r) => r.listing_package === 'basic')
+
+  return <HomeContent vip={vip} featured={featured} basicRestaurants={basicRestaurants} />
 }

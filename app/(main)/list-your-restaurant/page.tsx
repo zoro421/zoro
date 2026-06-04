@@ -4,8 +4,8 @@ import { Mail } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'List Your Place — Tashkelah',
-  description: 'Get your business and walk-in deals in front of thousands of customers across the UAE.',
+  title: 'List Your Place — Ozwati',
+  description: 'Get your business and walk-in deals in front of thousands of visitors across the UAE.',
 }
 
 export default function ListYourRestaurantPage() {
@@ -15,7 +15,7 @@ export default function ListYourRestaurantPage() {
         <div className="space-y-3">
           <h1 className="text-3xl sm:text-4xl font-bold">List Your Place</h1>
           <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-            Get your walk-in deals in front of thousands of customers across the UAE. No contracts, no upfront fees — just results.
+            Get your walk-in deals in front of thousands of visitors across the UAE.
           </p>
         </div>
 
@@ -27,11 +27,11 @@ export default function ListYourRestaurantPage() {
             </p>
           </div>
           <Link
-            href="mailto:info@atayyeb.ae"
+            href="mailto:info@ozwati.com"
             className={buttonVariants({ size: 'lg' })}
           >
             <Mail className="h-4 w-4 mr-2" />
-            info@atayyeb.ae
+            info@ozwati.com
           </Link>
         </div>
       </div>

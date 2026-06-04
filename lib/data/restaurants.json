@@ -14,8 +14,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Couples"],
-    "listing_package": "premium",
+    "dining_type": [
+      "Fine Dining",
+      "Couples"
+    ],
+    "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
     "view_count": 2,
@@ -102,9 +105,24 @@
       "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876884007-o2psqnpctal.png"
     ],
     "gallery_items": [
-      { "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876869620-ok9fs3fthma.png", "caption": "kosa", "price_after": 10, "price_before": 20 },
-      { "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876877733-gwtygpadr35.png", "caption": "rice", "price_after": 15, "price_before": 30 },
-      { "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876884007-o2psqnpctal.png", "caption": "burger", "price_after": 50, "price_before": 100 }
+      {
+        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876869620-ok9fs3fthma.png",
+        "caption": "kosa",
+        "price_after": 10,
+        "price_before": 20
+      },
+      {
+        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876877733-gwtygpadr35.png",
+        "caption": "rice",
+        "price_after": 15,
+        "price_before": 30
+      },
+      {
+        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876884007-o2psqnpctal.png",
+        "caption": "burger",
+        "price_after": 50,
+        "price_before": 100
+      }
     ],
     "dining_type": [],
     "listing_package": "premium",

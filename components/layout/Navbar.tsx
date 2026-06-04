@@ -44,11 +44,14 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'text-sm font-medium transition-colors hover:text-primary',
+                  'relative pb-0.5 text-sm font-medium transition-colors hover:text-primary',
                   pathname === link.href ? 'text-primary' : 'text-muted-foreground'
                 )}
               >
                 {link.label}
+                {pathname === link.href && (
+                  <span className="absolute -bottom-[1px] inset-x-0 h-[2px] rounded-full bg-primary" />
+                )}
               </Link>
             ))}
           </nav>

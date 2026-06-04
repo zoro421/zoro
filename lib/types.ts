@@ -38,7 +38,7 @@ export interface Restaurant {
   gallery_urls: string[] | null
   gallery_items: GalleryItem[] | null
   dining_type: string[] | null
-  listing_package: 'basic' | 'premium'
+  listing_package: 'basic' | 'premium' | 'vip'
   is_approved: boolean
   is_active: boolean
   view_count: number

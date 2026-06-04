@@ -45,45 +45,45 @@
 }
 
 :root {
-  /* Light: #FFF8F2 bg · #1C1410 fg · #E24B4A primary */
+  /* Light: #FFF8F2 bg · #1C1410 fg · #C94040 primary */
   --background: #FFF8F2;
   --foreground: #1C1410;
   --card: #FFFFFF;
   --card-foreground: #1C1410;
   --popover: #FFFFFF;
   --popover-foreground: #1C1410;
-  --primary: #E24B4A;
+  --primary: #C94040;
   --primary-foreground: #FFFFFF;
-  --secondary: #EAE0D5; /* same as --muted in light mode; diverges in dark */
+  --secondary: #EAE0D5;
   --secondary-foreground: #1C1410;
   --muted: #EAE0D5;
   --muted-foreground: #7A6355;
-  --accent: #EAE0D5; /* same as --muted in light mode; becomes gold (#EF9F27) in dark */
+  --accent: #EAE0D5;
   --accent-foreground: #1C1410;
-  --destructive: #C0392B;
+  --destructive: #B33030;
   --border: #D5C8BB;
   --input: #D5C8BB;
-  --ring: #E24B4A;
+  --ring: #C94040;
   --radius: 0.625rem;
   --sidebar: #F2E8DF;
   --sidebar-foreground: #1C1410;
-  --sidebar-primary: #E24B4A;
+  --sidebar-primary: #C94040;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #EAE0D5;
   --sidebar-accent-foreground: #1C1410;
   --sidebar-border: #D5C8BB;
-  --sidebar-ring: #E24B4A;
+  --sidebar-ring: #C94040;
 }
 
 .dark {
-  /* Dark: #1C1410 bg · warm white fg · #E24B4A primary · #EF9F27 gold accent */
+  /* Dark: #1C1410 bg · warm white fg · #C94040 primary · #EF9F27 gold accent */
   --background: #1C1410;
   --foreground: #F0EBE6;
   --card: #2D2118;
   --card-foreground: #F0EBE6;
   --popover: #2D2118;
   --popover-foreground: #F0EBE6;
-  --primary: #E24B4A;
+  --primary: #C94040;
   --primary-foreground: #FFFFFF;
   --secondary: #3D2D23;
   --secondary-foreground: #F0EBE6;
@@ -94,15 +94,15 @@
   --destructive: #F87171;
   --border: rgba(255, 255, 255, 0.14);
   --input: rgba(255, 255, 255, 0.14);
-  --ring: #E24B4A;
+  --ring: #C94040;
   --sidebar: #241A10;
   --sidebar-foreground: #F0EBE6;
-  --sidebar-primary: #E24B4A;
+  --sidebar-primary: #C94040;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #3D2D23;
   --sidebar-accent-foreground: #EF9F27;
   --sidebar-border: rgba(255, 255, 255, 0.14);
-  --sidebar-ring: #E24B4A;
+  --sidebar-ring: #C94040;
 }
 
 @keyframes fade-up {

@@ -1,23 +1,18 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mail, Users, Zap, TrendingUp, Star, CheckCircle } from 'lucide-react'
+import { Mail, Users, Zap, TrendingUp, CheckCircle } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'For Businesses — Tashkelah',
-  description: 'List your restaurant on Tashkelah and get discovered by thousands of UAE diners looking for walk-in deals.',
+  title: 'For Businesses — Ozwati',
+  description: 'List your place on Ozwati and get discovered by thousands of UAE visitors looking for walk-in deals.',
 }
 
 const benefits = [
   {
-    Icon: Star,
-    title: 'Zero cost to start',
-    desc: 'No upfront fees, no contracts, no commitment. List your restaurant and start driving walk-in traffic today.',
-  },
-  {
     Icon: Users,
     title: 'Thousands of daily visitors',
-    desc: 'UAE diners actively searching for places to eat — your deals appear exactly when they\'re ready to walk in.',
+    desc: 'UAE visitors actively searching for places to go — your deals appear exactly when they\'re ready to walk in.',
   },
   {
     Icon: Zap,
@@ -27,14 +22,14 @@ const benefits = [
   {
     Icon: TrendingUp,
     title: 'Track your visibility',
-    desc: 'See how many people viewed your restaurant so you know what\'s working.',
+    desc: 'See how many people viewed your listing so you know what\'s working.',
   },
 ]
 
 const steps = [
   {
     title: 'Send us your details',
-    desc: 'Email your restaurant name, location, phone number, and current walk-in offer to info@atayyeb.ae.',
+    desc: 'Email your business name, location, phone number, and current walk-in offer to info@ozwati.com.',
   },
   {
     title: 'We review & set up',
@@ -42,7 +37,7 @@ const steps = [
   },
   {
     title: 'Start getting walk-ins',
-    desc: 'Your restaurant and deals appear to thousands of UAE diners actively looking for somewhere to eat.',
+    desc: 'Your listing and deals appear to thousands of UAE visitors actively looking for somewhere to go.',
   },
 ]
 
@@ -57,18 +52,18 @@ export default function BusinessPage() {
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/[0.09] text-xs font-semibold text-primary uppercase tracking-wider animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            For Restaurants &amp; Businesses
+            For Businesses
           </div>
           <h1 className="animate-fade-up [animation-delay:80ms] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
-            Be discovered by thousands<br className="hidden sm:block" /> of UAE diners
+            Be discovered by thousands<br className="hidden sm:block" /> of UAE visitors
           </h1>
           <p className="animate-fade-up [animation-delay:160ms] text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-            Our goal is to spotlight the potential of local UAE businesses — connecting them with hungry diners who are ready to walk in, right now.
+            Our goal is to spotlight the potential of local UAE businesses — connecting them with visitors who are ready to walk in, right now.
           </p>
           <div className="animate-fade-up [animation-delay:240ms]">
-            <Link href="mailto:info@atayyeb.ae" className={buttonVariants({ size: 'lg' })}>
+            <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg' })}>
               <Mail className="h-4 w-4 me-2" />
-              Get listed — info@atayyeb.ae
+              Get listed — info@ozwati.com
             </Link>
           </div>
         </div>
@@ -87,10 +82,10 @@ export default function BusinessPage() {
                 Built to spotlight local businesses
               </h2>
               <p className="text-muted-foreground text-base leading-relaxed">
-                Tashkelah was built with one belief: great local restaurants deserve to be found. Not just the big chains — the neighbourhood gem, the family-run spot, the place doing something nobody else does.
+                Ozwati was built with one belief: great local businesses deserve to be found. Not just the big chains — the neighbourhood gem, the family-run spot, the place doing something nobody else does.
               </p>
               <p className="text-muted-foreground text-base leading-relaxed">
-                We built a platform that makes it effortless for UAE diners to discover local restaurants and walk straight in. No apps. No vouchers. No friction — just great meals happening every day.
+                We built a platform that makes it effortless for UAE visitors to discover local spots and walk straight in. No apps. No vouchers. No friction — just great experiences happening every day.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -143,17 +138,17 @@ export default function BusinessPage() {
                 color: 'rgba(255,255,255,0.025)',
                 lineHeight: 1,
                 whiteSpace: 'nowrap',
-              }}>تشكيلة</span>
+              }}>عزوتي</span>
             </div>
             <div className="relative space-y-4">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Ready to be discovered?</h2>
               <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
-                Email us your restaurant name, location, and current offer. We&apos;ll get you listed within 24 hours.
+                Email us your business name, location, and current offer. We&apos;ll get you listed within 24 hours.
               </p>
               <div className="pt-2">
-                <Link href="mailto:info@atayyeb.ae" className={buttonVariants({ size: 'lg' })}>
+                <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg' })}>
                   <Mail className="h-4 w-4 me-2" />
-                  info@atayyeb.ae
+                  info@ozwati.com
                 </Link>
               </div>
             </div>

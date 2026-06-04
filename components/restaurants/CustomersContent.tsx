@@ -9,15 +9,15 @@ import { cn } from '@/lib/utils'
 const highlights = [
   {
     title: 'Completely Free',
-    desc: 'No subscription. No hidden fees. Browsing deals on Tashkelah is free — and always will be.',
+    desc: 'No subscription. No hidden fees. Browsing deals on Ozwati is free.',
   },
   {
     title: 'No App Needed',
-    desc: 'Tashkelah works in any browser on your phone, tablet, or computer. Nothing to download or install.',
+    desc: 'Ozwati works in any browser on your phone, tablet, or computer. Nothing to download or install.',
   },
   {
     title: 'No Account Required',
-    desc: 'Browse all restaurants and deals without creating an account. Just open and explore.',
+    desc: 'Browse all listings and deals without creating an account. Just open and explore.',
   },
 ]
 
@@ -35,18 +35,18 @@ const howToUse = [
   {
     Icon: Utensils,
     title: 'Walk in & enjoy',
-    desc: 'Head to the restaurant and mention you found the offer on Tashkelah. No voucher, no booking, no code.',
+    desc: 'Head to the spot and mention you found the offer on Ozwati. No voucher, no booking, no code.',
   },
 ]
 
 const faqs = [
   {
-    q: 'Is Tashkelah free for customers?',
-    a: 'Yes — 100% free. There is no subscription, no credits, and no hidden fees. Browsing and using deals on Tashkelah costs nothing.',
+    q: 'Is Ozwati free for customers?',
+    a: 'Yes — 100% free. There is no subscription, no credits, and no hidden fees. Browsing and using deals on Ozwati costs nothing.',
   },
   {
     q: 'Do I need to download an app?',
-    a: 'No app needed. Tashkelah runs entirely in your browser. Open it on any device — phone, tablet, or desktop — and start browsing immediately. Nothing to install.',
+    a: 'No app needed. Ozwati runs entirely in your browser. Open it on any device — phone, tablet, or desktop — and start browsing immediately. Nothing to install.',
   },
   {
     q: 'Do I need to create an account?',
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: 'How do I use a deal?',
-    a: 'Browse, find a restaurant you like, then simply walk in and tell the staff you found the deal on Tashkelah. No voucher, no QR code, no booking required.',
+    a: 'Browse, find a restaurant you like, then simply walk in and tell the staff you found the deal on Ozwati. No voucher, no QR code, no booking required.',
   },
   {
     q: 'How often are deals updated?',
@@ -105,18 +105,11 @@ export default function CustomersContent() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_-10%,hsl(var(--primary)/0.15),transparent)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,hsl(var(--background)))]" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6 text-center space-y-8">
-          <div className="animate-fade-up flex flex-wrap items-center justify-center gap-2">
-            {['100% Free', 'No App', 'No Registration'].map((label) => (
-              <span key={label} className="px-3 py-1.5 rounded-full border border-primary/25 bg-primary/[0.09] text-xs font-semibold text-primary uppercase tracking-wider">
-                {label}
-              </span>
-            ))}
-          </div>
-          <h1 className="animate-fade-up [animation-delay:80ms] text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1]">
+          <h1 className="animate-fade-up text-4xl sm:text-5xl font-bold tracking-tight leading-[1.1]">
             Everything you need<br /> to know
           </h1>
-          <p className="animate-fade-up [animation-delay:160ms] text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
-            Tashkelah is the simplest way to discover and walk into the best restaurants across the UAE — with zero cost and zero friction.
+          <p className="animate-fade-up [animation-delay:80ms] text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto">
+            Ozwati is the simplest way to discover and walk into the best spots across the UAE — with zero cost and zero friction.
           </p>
         </div>
       </section>
@@ -139,7 +132,7 @@ export default function CustomersContent() {
       <section className="py-20 bg-muted/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">How to use Tashkelah</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">How it works</h2>
             <p className="text-muted-foreground text-base">Three steps. No friction.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border rounded-2xl border border-border bg-card overflow-hidden">
@@ -179,9 +172,9 @@ export default function CustomersContent() {
         <div className="mx-auto max-w-xl px-4 sm:px-6 text-center space-y-5">
           <h2 className="text-2xl font-bold">Still have questions?</h2>
           <p className="text-muted-foreground text-base">We&apos;re happy to help. Reach out and we&apos;ll get back to you quickly.</p>
-          <Link href="mailto:info@atayyeb.ae" className={buttonVariants({ size: 'lg', variant: 'outline' })}>
+          <Link href="mailto:info@ozwati.com" className={buttonVariants({ size: 'lg', variant: 'outline' })}>
             <Mail className="h-4 w-4 me-2" />
-            info@atayyeb.ae
+            info@ozwati.com
           </Link>
         </div>
       </section>

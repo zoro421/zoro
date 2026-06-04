@@ -52,14 +52,14 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
             />
           )
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-muted to-muted/80 flex items-center justify-center">
-            <span className="text-7xl font-black text-primary/15 select-none uppercase">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/[0.06] to-muted/60 flex items-center justify-center">
+            <span className="text-8xl font-black text-primary/20 select-none uppercase">
               {restaurant.name[0]}
             </span>
           </div>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/[0.12] to-transparent" />
 
         {topOffer && (
           <div className="absolute top-3 left-3 z-10">
@@ -123,7 +123,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
 
           <Link
             href={`/restaurants/${restaurant.slug}`}
-            className="flex items-center gap-0.5 text-xs text-muted-foreground hover:text-primary transition-colors font-medium"
+            className="flex items-center gap-0.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors font-medium"
           >
             {t.card.viewDeal} <ChevronRight className="h-3.5 w-3.5" />
           </Link>
