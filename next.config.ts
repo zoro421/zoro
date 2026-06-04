@@ -1,11 +1,9 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: isProd ? '/zoro' : '',
-  assetPrefix: isProd ? '/zoro/' : '',
+  // Served at the root of the custom domain (ozwati.com), so no basePath/assetPrefix.
+  // (A /zoro prefix would only be correct for the zoro421.github.io/zoro project URL.)
   devIndicators: false,
   images: {
     unoptimized: true,
