@@ -16,10 +16,15 @@ export const metadata: Metadata = {
   description:
     'Discover the best restaurant walk-in deals, discounts, and dining offers across Dubai, Abu Dhabi, and the UAE. Updated daily.',
   keywords: 'restaurant deals UAE, dining offers Dubai, walk-in discounts, food deals Abu Dhabi',
+  metadataBase: new URL('https://www.ozwati.com'),
+  alternates: {
+    canonical: 'https://www.ozwati.com',
+  },
   openGraph: {
     title: 'Tashkelah — Restaurant Walk-in Offers in UAE',
     description: 'Discover the best restaurant deals across the UAE.',
     type: 'website',
+    url: 'https://www.ozwati.com',
   },
 }
 
