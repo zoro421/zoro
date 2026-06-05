@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     'Discover the best walk-in deals, discounts, and exclusive offers across Dubai, Abu Dhabi, and the UAE. Updated daily.',
   keywords: `deals UAE, offers Dubai, walk-in discounts, Abu Dhabi deals, ${BRAND.name}`,
-  metadataBase: new URL(BRAND.url),
+  metadataBase: BRAND.url ? new URL(BRAND.url) : undefined,
   alternates: {
     canonical: BRAND.url,
   },
