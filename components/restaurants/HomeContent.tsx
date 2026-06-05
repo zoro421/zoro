@@ -5,6 +5,8 @@ import { buttonVariants } from '@/components/ui/button'
 import RestaurantCard from './RestaurantCard'
 import { ArrowRight, UtensilsCrossed } from 'lucide-react'
 import { useLang } from '@/lib/language-context'
+import { PulseFitHero } from '@/components/ui/pulse-fit-hero'
+import { AnimatedHero } from '@/components/ui/animated-hero'
 import type { Restaurant } from '@/lib/types'
 
 interface HomeContentProps {
@@ -14,12 +16,10 @@ interface HomeContentProps {
 }
 
 function SectionHeader({
-  eyebrow,
   title,
   subtitle,
   action,
 }: {
-  eyebrow?: React.ReactNode
   title: string
   subtitle?: string
   action?: React.ReactNode
@@ -27,7 +27,6 @@ function SectionHeader({
   return (
     <div className="flex items-end justify-between gap-4">
       <div className="space-y-1">
-        {eyebrow && <div className="flex items-center gap-2 mb-2">{eyebrow}</div>}
         <h2 className="text-3xl sm:text-4xl font-bold tracking-[-0.03em]">{title}</h2>
         {subtitle && <p className="text-muted-foreground text-base mt-1">{subtitle}</p>}
       </div>
@@ -54,70 +53,28 @@ export default function HomeContent({ vip, featured, basicRestaurants }: HomeCon
   const { t } = useLang()
   const noDeals = vip.length === 0 && featured.length === 0 && basicRestaurants.length === 0
 
+  const vipPrograms = vip.map((r) => ({
+    image: r.cover_image_url ?? `https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80`,
+    category: r.cuisine_type ?? 'Restaurant',
+    title: r.name,
+  }))
+
   return (
     <div>
-      {/* Hero */}
-      <section className="relative overflow-hidden py-20 sm:py-32 border-b border-border/40">
-        {/* Background layers */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_-10%,color-mix(in_oklab,var(--primary)_28%,transparent),transparent)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,var(--background))]" />
-        {/* Dot-grid texture */}
-        <div className="absolute inset-0 opacity-[0.045] pointer-events-none [background-image:radial-gradient(var(--primary)_1px,transparent_1px)] [background-size:22px_22px]" />
-        {/* Rings */}
-        <div className="absolute -top-28 -right-28 w-[560px] h-[560px] rounded-full border-[52px] border-primary/[0.14] pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 rounded-full border-[32px] border-primary/[0.11] pointer-events-none" />
-        {/* Glow blobs */}
-        <div className="absolute top-1/3 right-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.12] blur-3xl pointer-events-none" />
-        <div className="absolute -top-10 left-[8%] w-72 h-72 rounded-full bg-primary/[0.08] blur-3xl pointer-events-none" />
-        {/* Accent dots */}
-        <div className="absolute top-24 left-[22%] w-2.5 h-2.5 rounded-full bg-primary/25 pointer-events-none" />
-        <div className="absolute bottom-32 right-[30%] w-1.5 h-1.5 rounded-full bg-primary/20 pointer-events-none" />
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center text-center gap-7 max-w-3xl mx-auto">
-
-            <h1 className="animate-fade-up text-5xl sm:text-6xl font-bold tracking-[-0.04em] leading-[1.05]">
-              {t.hero.title1}<br />
-              <span className="text-primary">{t.hero.title2}</span>{' '}{t.hero.title3}
-            </h1>
-
-            <p className="animate-fade-up [animation-delay:80ms] text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-lg">
-              {t.hero.subtitle}
-            </p>
-
-            <div className="animate-fade-up [animation-delay:160ms] flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/deals" className={buttonVariants({ size: 'lg' })}>
-                {t.hero.browseDeals} <ArrowRight className="ms-2 h-4 w-4" />
-              </Link>
-              <Link href="/business" className={buttonVariants({ variant: 'outline', size: 'lg' })}>
-                {t.hero.listRestaurant}
-              </Link>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/* Hero with VIP carousel */}
+      <PulseFitHero
+        showHeader={false}
+        programs={vipPrograms}
+        className="pt-14 border-b border-border/40"
+      >
+        <AnimatedHero />
+      </PulseFitHero>
 
       {/* Empty state */}
       {noDeals && (
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <EmptyDeals title={t.deals.emptyTitle} subtitle={t.deals.emptySubtitle} />
-          </div>
-        </section>
-      )}
-
-      {/* VIP section */}
-      {vip.length > 0 && (
-        <section className="py-20 border-b border-border/40">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <SectionHeader
-              title="Exclusive picks"
-              subtitle="Handpicked top-tier experiences."
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {vip.map((r) => <RestaurantCard key={r.id} restaurant={r} />)}
-            </div>
           </div>
         </section>
       )}

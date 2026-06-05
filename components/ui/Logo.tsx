@@ -20,7 +20,7 @@ export default function Logo({ size = 'md' }: LogoProps) {
           fontFamily: 'var(--font-cairo), sans-serif',
           fontSize: arabic,
           fontWeight: 700,
-          color: '#C94040',
+          color: 'var(--foreground)',
           lineHeight: 1.35,
           paddingBottom: '0.1em',
         }}
@@ -34,8 +34,8 @@ export default function Logo({ size = 'md' }: LogoProps) {
           fontWeight: 700,
           letterSpacing: '0.18em',
           lineHeight: 1,
+          color: 'var(--foreground)',
         }}
-        className="text-[#1C1410] dark:text-[#EAA030]"
       >
         {BRAND.nameDisplay}
       </span>

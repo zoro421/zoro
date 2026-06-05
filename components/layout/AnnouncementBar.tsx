@@ -42,13 +42,14 @@ export default function AnnouncementBar({ announcements }: { announcements: Anno
 
   const ann = announcements[current]
   const multiple = announcements.length > 1
-  const slideOut = direction === 'left' ? '-translate-x-2 opacity-0' : 'translate-x-2 opacity-0'
+  const translateDir = direction === 'left' ? '-translate-x-2' : 'translate-x-2'
+  const slideOut = `${translateDir} opacity-0`
 
   return (
     <div
       className="relative w-full select-none overflow-hidden"
       style={{
-        background: 'linear-gradient(110deg, #A83535 0%, #C94040 50%, #B33838 100%)',
+        background: 'linear-gradient(110deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%)',
       }}
     >
       {/* Shimmer sweep */}
@@ -69,19 +70,8 @@ export default function AnnouncementBar({ announcements }: { announcements: Anno
         }}
       />
 
-      <style>{`
-        @keyframes ann-shimmer {
-          0%   { transform: translateX(-120%); }
-          60%  { transform: translateX(120%); }
-          100% { transform: translateX(120%); }
-        }
-        @keyframes ann-pulse {
-          0%, 100% { opacity: 1;   transform: scale(1); }
-          50%       { opacity: 0.3; transform: scale(0.7); }
-        }
-      `}</style>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-3 min-h-[44px]">
+<div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-3 min-h-[44px]">
 
         {/* Prev */}
         {multiple && (

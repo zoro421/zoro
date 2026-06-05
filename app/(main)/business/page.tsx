@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mail, Users, Zap, TrendingUp, CheckCircle } from 'lucide-react'
+import { Mail, Users, Zap, TrendingUp, CheckCircle, MessageSquare } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { BRAND } from '@/lib/brand'
 
@@ -24,6 +24,11 @@ const benefits = [
     Icon: TrendingUp,
     title: 'Track your visibility',
     desc: 'See how many people viewed your listing so you know what\'s working.',
+  },
+  {
+    Icon: MessageSquare,
+    title: 'Direct walk-ins, not clicks',
+    desc: 'Every visitor we send your way arrives at your door — real footfall, same day. No referral links, no complicated funnels.',
   },
 ]
 
@@ -51,18 +56,18 @@ export default function BusinessPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,hsl(var(--background)))]" />
         <div className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full border-[48px] border-primary/[0.08] pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/[0.09] text-xs font-semibold text-primary uppercase tracking-wider animate-fade-up">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            For Businesses
-          </div>
-          <h1 className="animate-fade-up [animation-delay:80ms] text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
+          <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
             Be discovered by thousands<br className="hidden sm:block" /> of UAE visitors
           </h1>
-          <p className="animate-fade-up [animation-delay:160ms] text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+          <p className="animate-fade-up [animation-delay:80ms] text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
             Our goal is to spotlight the potential of local UAE businesses — connecting them with visitors who are ready to walk in, right now.
           </p>
-          <div className="animate-fade-up [animation-delay:240ms]">
-            <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg' })}>
+          <div className="animate-fade-up [animation-delay:160ms]">
+            <Link
+              href={`mailto:${BRAND.email}`}
+              className={buttonVariants({ size: 'lg' })}
+              style={{ background: '#1a1a1a', borderColor: '#1a1a1a' }}
+            >
               <Mail className="h-4 w-4 me-2" />
               Get listed — {BRAND.email}
             </Link>
@@ -91,8 +96,8 @@ export default function BusinessPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {benefits.map((b) => (
-                <div key={b.title} className="rounded-2xl border border-border bg-card p-6 space-y-3 hover:border-primary/40 transition-colors">
-                  <b.Icon className="h-5 w-5 text-primary" />
+                <div key={b.title} className="rounded-2xl border border-border bg-card p-6 space-y-3 hover:border-border hover:bg-muted/40 transition-colors">
+                  <b.Icon className="h-5 w-5 text-foreground" />
                   <h3 className="font-semibold text-sm leading-snug">{b.title}</h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">{b.desc}</p>
                 </div>
@@ -111,12 +116,12 @@ export default function BusinessPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border rounded-2xl border border-border bg-card overflow-hidden">
             {steps.map((step, i) => (
-              <div key={step.title} className="relative p-8 sm:p-10 overflow-hidden group hover:bg-primary/[0.03] transition-colors">
-                <span className="absolute -top-3 -right-1 text-[120px] font-black text-primary/[0.055] leading-none select-none pointer-events-none group-hover:text-primary/[0.09] transition-colors duration-300">
+              <div key={step.title} className="relative p-8 sm:p-10 overflow-hidden group hover:bg-muted/40 transition-colors">
+                <span className="absolute -top-3 -right-1 text-[120px] font-black text-foreground/[0.04] leading-none select-none pointer-events-none group-hover:text-foreground/[0.07] transition-colors duration-300">
                   {i + 1}
                 </span>
                 <div className="relative">
-                  <CheckCircle className="h-6 w-6 text-primary mb-5" />
+                  <CheckCircle className="h-6 w-6 text-foreground mb-5" />
                   <h3 className="font-bold text-xl mb-3">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>
@@ -129,25 +134,14 @@ export default function BusinessPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-[#1C1410] dark:bg-[#120E09] px-8 py-14 sm:px-14 text-center">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_80%_at_50%_0%,rgba(226,75,74,0.28),transparent)]" />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-              <span style={{
-                fontFamily: 'var(--font-cairo), sans-serif',
-                fontSize: 220,
-                fontWeight: 700,
-                color: 'rgba(255,255,255,0.025)',
-                lineHeight: 1,
-                whiteSpace: 'nowrap',
-              }}>{BRAND.nameAr}</span>
-            </div>
+          <div className="relative overflow-hidden rounded-3xl bg-white border border-border px-8 py-14 sm:px-14 text-center">
             <div className="relative space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Ready to be discovered?</h2>
-              <p className="text-white/55 text-base max-w-xl mx-auto leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a1a1a]">Ready to be discovered?</h2>
+              <p className="text-[#4a5568] text-base max-w-xl mx-auto leading-relaxed">
                 Email us your business name, location, and current offer at {BRAND.email}. We&apos;ll get you listed within 24 hours.
               </p>
               <div className="pt-2">
-                <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg' })}>
+                <Link href={`mailto:${BRAND.email}`} className={buttonVariants({ size: 'lg', variant: 'outline' })}>
                   <Mail className="h-4 w-4 me-2" />
                   {BRAND.email}
                 </Link>

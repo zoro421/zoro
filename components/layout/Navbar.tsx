@@ -44,13 +44,13 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative pb-0.5 text-sm font-medium transition-colors hover:text-primary',
-                  pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                  'relative pb-0.5 text-sm font-medium transition-colors hover:text-[#2E6DA4]',
+                  pathname === link.href ? 'text-[#2E6DA4]' : 'text-muted-foreground'
                 )}
               >
                 {link.label}
                 {pathname === link.href && (
-                  <span className="absolute -bottom-[1px] inset-x-0 h-[2px] rounded-full bg-primary" />
+                  <span className="absolute -bottom-[1px] inset-x-0 h-[2px] rounded-full bg-[#2E6DA4]" />
                 )}
               </Link>
             ))}
@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* Mobile menu trigger */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'md:hidden')}>
+            <SheetTrigger className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'md:hidden cursor-pointer')}>
               <Menu className="h-5 w-5" />
             </SheetTrigger>
             <SheetContent side="right" className="w-72 flex flex-col p-0">

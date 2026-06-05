@@ -29,7 +29,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
   const isExpiringSoon = validUntil && ['Ends today', 'Ends tomorrow', '2 days left', '3 days left'].includes(validUntil)
 
   return (
-    <article className="group relative flex flex-col bg-card rounded-2xl border border-border overflow-hidden hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(226,75,74,0.14),0_2px_8px_rgba(0,0,0,0.08)] transition-[border-color,box-shadow] duration-200">
+    <article className="group relative flex flex-col bg-card rounded-2xl border border-border overflow-hidden hover:border-[#2E6DA4]/30 hover:shadow-[0_8px_40px_rgba(46,109,164,0.12),0_2px_8px_rgba(0,0,0,0.06)] transition-[border-color,box-shadow] duration-200">
       {/* Image */}
       <Link href={`/restaurants/${restaurant.slug}`} className="block relative h-52 overflow-hidden">
         {restaurant.cover_image_url ? (
@@ -80,7 +80,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
       <div className="flex flex-col gap-2.5 p-4 flex-1">
         <div className="flex items-start justify-between gap-2">
           <Link href={`/restaurants/${restaurant.slug}`} className="flex-1 min-w-0">
-            <h3 className="font-semibold text-base leading-tight line-clamp-1 group-hover:text-primary transition-colors">
+            <h3 className="font-semibold text-base leading-tight line-clamp-1 group-hover:text-[#2E6DA4] transition-colors">
               {restaurant.name}
             </h3>
           </Link>
@@ -115,7 +115,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
                 {validUntil}
               </span>
             ) : activeOffers.length > 1 ? (
-              <span className="text-primary font-medium">
+              <span className="text-[#2E6DA4] font-medium">
                 +{activeOffers.length - 1} {activeOffers.length > 2 ? t.card.moreOffers : t.card.moreOffer}
               </span>
             ) : null}
@@ -123,7 +123,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
 
           <Link
             href={`/restaurants/${restaurant.slug}`}
-            className="flex items-center gap-0.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors font-medium"
+            className="flex items-center gap-0.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground hover:bg-[#2E6DA4]/10 hover:text-[#2E6DA4] transition-colors font-medium cursor-pointer"
           >
             {t.card.viewDeal} <ChevronRight className="h-3.5 w-3.5" />
           </Link>

@@ -81,7 +81,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div className="border-b border-border/60 last:border-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left font-medium text-base hover:text-primary transition-colors cursor-pointer"
+        className="w-full flex items-center justify-between gap-4 py-5 text-left font-medium text-base hover:text-[#2E6DA4] transition-colors cursor-pointer"
       >
         <span>{q}</span>
         <ChevronDown className={cn(
@@ -120,7 +120,7 @@ export default function CustomersContent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {highlights.map((h) => (
-              <div key={h.title} className="rounded-2xl border border-border bg-card p-8 space-y-3 hover:border-primary/40 transition-colors">
+              <div key={h.title} className="rounded-2xl border border-border bg-card p-8 space-y-3 hover:border-[#2E6DA4]/30 transition-colors">
                 <h3 className="font-bold text-xl">{h.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{h.desc}</p>
               </div>
@@ -138,12 +138,12 @@ export default function CustomersContent() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border rounded-2xl border border-border bg-card overflow-hidden">
             {howToUse.map(({ Icon, title, desc }, i) => (
-              <div key={title} className="relative p-8 sm:p-10 overflow-hidden group hover:bg-primary/[0.03] transition-colors">
-                <span className="absolute -top-3 -right-1 text-[120px] font-black text-primary/[0.055] leading-none select-none pointer-events-none group-hover:text-primary/[0.09] transition-colors duration-300">
+              <div key={title} className="relative p-8 sm:p-10 overflow-hidden group hover:bg-muted/40 transition-colors">
+                <span className="absolute -top-3 -right-1 text-[120px] font-black text-foreground/[0.04] leading-none select-none pointer-events-none group-hover:text-foreground/[0.07] transition-colors duration-300">
                   {i + 1}
                 </span>
                 <div className="relative">
-                  <Icon className="h-6 w-6 text-primary mb-5" />
+                  <Icon className="h-6 w-6 text-foreground mb-5" />
                   <h3 className="font-bold text-xl mb-3">{title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
                 </div>
