@@ -2,41 +2,26 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Clock, ChevronRight } from 'lucide-react'
-import { Badge } from '@/components/ui/badge'
+import { MapPin } from 'lucide-react'
 import OfferBadge from './OfferBadge'
 import ShareButton from './ShareButton'
 import { useLang } from '@/lib/language-context'
 import type { Restaurant } from '@/lib/types'
 
-function formatValidUntil(date: string | null | undefined) {
-  if (!date) return null
-  const d = new Date(date)
-  const now = new Date()
-  const diff = Math.ceil((d.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
-  if (diff < 0) return 'Expired'
-  if (diff === 0) return 'Ends today'
-  if (diff === 1) return 'Ends tomorrow'
-  if (diff <= 7) return `${diff} days left`
-  return `Until ${d.toLocaleDateString('en-AE', { day: 'numeric', month: 'short' })}`
-}
-
 export default function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
   const { t } = useLang()
   const activeOffers = restaurant.offers?.filter((o) => o.is_active && o.is_approved) ?? []
   const topOffer = activeOffers[0]
-  const validUntil = topOffer?.valid_until ? formatValidUntil(topOffer.valid_until) : null
-  const isExpiringSoon = validUntil && ['Ends today', 'Ends tomorrow', '2 days left', '3 days left'].includes(validUntil)
 
   return (
-    <article className="group relative flex flex-col bg-card rounded-2xl border border-border overflow-hidden hover:border-[#2E6DA4]/30 hover:shadow-[0_8px_40px_rgba(46,109,164,0.12),0_2px_8px_rgba(0,0,0,0.06)] transition-[border-color,box-shadow] duration-200">
-      {/* Image */}
-      <Link href={`/restaurants/${restaurant.slug}`} className="block relative h-52 overflow-hidden">
+    <article className="group relative flex flex-col bg-card rounded-2xl overflow-hidden border border-border/60">
+      {/* Image — tall, portrait */}
+      <div className="relative h-72 shrink-0 overflow-hidden bg-muted">
         {restaurant.cover_image_url ? (
           restaurant.cover_image_url.match(/\.(mp4|mov|webm)$/i) ? (
             <video
               src={restaurant.cover_image_url}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
               muted
               loop
               autoPlay
@@ -47,8 +32,8 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
               src={restaurant.cover_image_url}
               alt={restaurant.name}
               fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
+              sizes="(max-width: 640px) 280px, 300px"
             />
           )
         ) : (
@@ -59,73 +44,59 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
           </div>
         )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/[0.12] to-transparent" />
-
+        {/* Offer badge — top left */}
         {topOffer && (
-          <div className="absolute top-3 left-3 z-10">
+          <div className="absolute top-3 left-3 z-[2]">
             <OfferBadge offer={topOffer} size="md" />
           </div>
         )}
 
-        {isExpiringSoon && (
-          <div className="absolute top-3 right-3 z-10">
-            <Badge className="bg-primary text-primary-foreground font-bold border-0 rounded-md text-sm px-2.5 py-1">
-              {validUntil}
-            </Badge>
-          </div>
-        )}
-      </Link>
+        {/* Share — top right */}
+        <div className="absolute top-2.5 right-2.5 z-[2]">
+          <ShareButton
+            restaurantName={restaurant.name}
+            slug={restaurant.slug}
+            className="bg-white/90 backdrop-blur-sm text-neutral-800 hover:bg-white hover:text-neutral-900 shadow-sm"
+          />
+        </div>
+      </div>
 
       {/* Content */}
-      <div className="flex flex-col gap-2.5 p-4 flex-1">
-        <div className="flex items-start justify-between gap-2">
-          <Link href={`/restaurants/${restaurant.slug}`} className="flex-1 min-w-0">
-            <h3 className="font-semibold text-base leading-tight line-clamp-1 group-hover:text-[#2E6DA4] transition-colors">
-              {restaurant.name}
-            </h3>
-          </Link>
-          <div className="shrink-0 -mr-1 -mt-0.5">
-            <ShareButton restaurantName={restaurant.name} slug={restaurant.slug} />
-          </div>
-        </div>
+      <div className="flex flex-col gap-1 p-4 flex-1">
+        {/* Stretched-link title — makes entire card clickable */}
+        <Link
+          href={`/restaurants/${restaurant.slug}`}
+          className="font-bold text-[15px] leading-snug line-clamp-1 after:absolute after:inset-0 after:z-[1]"
+        >
+          {restaurant.name}
+        </Link>
 
-        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-muted-foreground">
-          {restaurant.cuisine_type && (
-            <Badge variant="secondary" className="text-xs font-normal px-2 py-0.5">
-              {restaurant.cuisine_type}
-            </Badge>
+        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground uppercase tracking-[0.07em]">
+          {restaurant.cuisine_type && <span>{restaurant.cuisine_type}</span>}
+          {restaurant.cuisine_type && restaurant.emirate && (
+            <span className="text-border">·</span>
           )}
           {restaurant.emirate && (
-            <span className="flex items-center gap-1">
-              <MapPin className="h-3 w-3 shrink-0" />
+            <span className="flex items-center gap-0.5">
+              <MapPin className="h-2.5 w-2.5 shrink-0" />
               {restaurant.emirate}
             </span>
           )}
         </div>
 
         {topOffer && (
-          <p className="text-sm text-foreground font-medium line-clamp-1">{topOffer.title}</p>
+          <p className="text-[13px] text-muted-foreground line-clamp-1 mt-0.5">
+            {topOffer.title}
+          </p>
         )}
 
-        <div className="flex items-center justify-between mt-auto pt-1">
-          <div className="text-xs text-muted-foreground">
-            {validUntil && !isExpiringSoon ? (
-              <span className="flex items-center gap-1">
-                <Clock className="h-3 w-3 shrink-0" />
-                {validUntil}
-              </span>
-            ) : activeOffers.length > 1 ? (
-              <span className="text-[#2E6DA4] font-medium">
-                +{activeOffers.length - 1} {activeOffers.length > 2 ? t.card.moreOffers : t.card.moreOffer}
-              </span>
-            ) : null}
-          </div>
-
+        {/* VIEW DEAL button */}
+        <div className="mt-auto pt-4">
           <Link
             href={`/restaurants/${restaurant.slug}`}
-            className="flex items-center gap-0.5 rounded-full bg-muted/60 px-2.5 py-1 text-xs text-muted-foreground hover:bg-[#2E6DA4]/10 hover:text-[#2E6DA4] transition-colors font-medium cursor-pointer"
+            className="relative z-[2] flex items-center justify-center w-full bg-primary text-primary-foreground text-[11px] font-bold uppercase tracking-[0.14em] py-3.5 rounded-xl hover:bg-primary/90 active:scale-[0.98] transition-all duration-150"
           >
-            {t.card.viewDeal} <ChevronRight className="h-3.5 w-3.5" />
+            {t.card.viewDeal}
           </Link>
         </div>
       </div>

@@ -54,7 +54,6 @@ export default function BusinessPage() {
       <section className="relative overflow-hidden py-20 sm:py-28 border-b border-border/40">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_-10%,hsl(var(--primary)/0.18),transparent)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_55%,hsl(var(--background)))]" />
-        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full border-[48px] border-primary/[0.08] pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <h1 className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
             Be discovered by thousands<br className="hidden sm:block" /> of UAE visitors
@@ -134,10 +133,10 @@ export default function BusinessPage() {
       {/* CTA */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-white border border-border px-8 py-14 sm:px-14 text-center">
+          <div className="relative overflow-hidden rounded-3xl bg-card border border-border px-8 py-14 sm:px-14 text-center">
             <div className="relative space-y-4">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#1a1a1a]">Ready to be discovered?</h2>
-              <p className="text-[#4a5568] text-base max-w-xl mx-auto leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Ready to be discovered?</h2>
+              <p className="text-muted-foreground text-base max-w-xl mx-auto leading-relaxed">
                 Email us your business name, location, and current offer at {BRAND.email}. We&apos;ll get you listed within 24 hours.
               </p>
               <div className="pt-2">

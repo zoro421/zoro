@@ -1,9 +1,10 @@
 'use client'
 
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
 import RestaurantCard from './RestaurantCard'
-import { ArrowRight, UtensilsCrossed } from 'lucide-react'
+import { ArrowRight, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLang } from '@/lib/language-context'
 import { PulseFitHero } from '@/components/ui/pulse-fit-hero'
 import { AnimatedHero } from '@/components/ui/animated-hero'
@@ -35,11 +36,73 @@ function SectionHeader({
   )
 }
 
+function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(restaurants.length > 3)
+
+  const updateScrollState = () => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 8)
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 8)
+  }
+
+  const scroll = (dir: 'left' | 'right') => {
+    scrollRef.current?.scrollBy({ left: dir === 'left' ? -336 : 336, behavior: 'smooth' })
+  }
+
+  return (
+    <div className="relative">
+      {/* Left fade + arrow */}
+      <div
+        className={`absolute left-0 inset-y-0 w-20 bg-gradient-to-r from-background to-transparent z-10 flex items-center transition-opacity duration-200 ${canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        <button
+          onClick={() => scroll('left')}
+          aria-label="Scroll left"
+          className="ms-4 h-9 w-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+      </div>
+
+      <div
+        ref={scrollRef}
+        onScroll={updateScrollState}
+        className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-4 sm:px-6 lg:px-8 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-8 pb-3"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+      >
+        {restaurants.map((r) => (
+          <div key={r.id} className="snap-start shrink-0 w-[272px] sm:w-[296px]">
+            <RestaurantCard restaurant={r} />
+          </div>
+        ))}
+        {/* Trailing spacer — no snap-start so it never becomes a snap target */}
+        <div className="shrink-0 w-4 sm:w-6 lg:w-8" aria-hidden="true" />
+      </div>
+
+      {/* Right fade + arrow */}
+      <div
+        className={`absolute right-0 inset-y-0 w-20 bg-gradient-to-l from-background to-transparent z-10 flex items-center justify-end transition-opacity duration-200 ${canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        <button
+          onClick={() => scroll('right')}
+          aria-label="Scroll right"
+          className="me-4 h-9 w-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
+    </div>
+  )
+}
+
 function EmptyDeals({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
       <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-        <UtensilsCrossed className="h-7 w-7 text-primary/60" />
+        <Search className="h-7 w-7 text-primary/60" />
       </div>
       <div className="space-y-2 max-w-sm">
         <p className="font-semibold text-xl">{title}</p>
@@ -81,8 +144,8 @@ export default function HomeContent({ vip, featured, basicRestaurants }: HomeCon
 
       {/* Premium featured section */}
       {featured.length > 0 && (
-        <section className="py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        <section className="py-20 overflow-hidden">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
             <SectionHeader
               title={t.deals.featuredTitle}
               subtitle={t.deals.featuredSubtitle}
@@ -92,10 +155,8 @@ export default function HomeContent({ vip, featured, basicRestaurants }: HomeCon
                 </Link>
               }
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {featured.map((r) => <RestaurantCard key={r.id} restaurant={r} />)}
-            </div>
           </div>
+          <CardCarousel restaurants={featured} />
         </section>
       )}
 
