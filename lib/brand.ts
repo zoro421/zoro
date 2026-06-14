@@ -1,7 +1,7 @@
 export const BRAND = {
-  name: process.env.NEXT_PUBLIC_APP_NAME!,
-  nameAr: process.env.NEXT_PUBLIC_APP_NAME_AR!,
-  email: process.env.NEXT_PUBLIC_APP_EMAIL!,
-  url: process.env.NEXT_PUBLIC_APP_URL!,
-  domain: process.env.NEXT_PUBLIC_APP_DOMAIN!,
+  name: process.env.NEXT_PUBLIC_APP_NAME ?? 'Ozwati',
+  nameAr: process.env.NEXT_PUBLIC_APP_NAME_AR ?? 'عزوتي',
+  email: process.env.NEXT_PUBLIC_APP_EMAIL ?? 'info@ozwati.com',
+  url: process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.ozwati.com',
+  domain: process.env.NEXT_PUBLIC_APP_DOMAIN ?? 'www.ozwati.com',
 }
