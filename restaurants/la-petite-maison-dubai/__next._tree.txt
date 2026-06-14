@@ -1,7 +1,9 @@
-:HL["/_next/static/chunks/0alufaf2o8~--.css","style"]
-:HL["/_next/static/media/20869c800a4d120c-s.p.0nxykw57x~vno.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/chunks/0itwvec8q1mbq.css","style"]
+:HL["/_next/static/media/05d29f0ed5b0e698-s.p.0ipr5zwy0u.~f.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/1062333f2bd32cfe-s.p.0l7ssxdh8f0nb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/221faba0970ae6e0-s.p.13wjohe6zkw5-.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/media/9977b226562052a3-s.p.0~7n9tbbishs4.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/291696193ea1e96b-s.p.0mmds2ktxtq7_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/648474ecaeaf4c9a-s.p.0~rf1n5_6ke06.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(main)","param":null,"prefetchHints":0,"slots":{"children":{"name":"restaurants","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"la-petite-maison-dubai","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"p0ryixqkae741p4Gf2x32"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(main)","param":null,"prefetchHints":0,"slots":{"children":{"name":"restaurants","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"la-petite-maison-dubai","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"jaihSgvE6dWwLgXWSfBPs"}
