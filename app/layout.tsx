@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Montserrat, Amiri } from 'next/font/google'
+import ReactDOM from 'react-dom'
 import { BRAND } from '@/lib/brand'
 import { Toaster } from '@/components/ui/sonner'
 import { Providers } from '@/components/providers'
@@ -32,11 +33,9 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  ReactDOM.preconnect('https://images.unsplash.com')
   return (
     <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${amiri.variable} h-full antialiased`} suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
-      </head>
       <body className="min-h-full flex flex-col bg-background">
         <Providers>
           {children}

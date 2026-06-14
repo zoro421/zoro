@@ -74,6 +74,7 @@ export default function PhotoGallery({ photos }: Props) {
               key={i}
               type="button"
               onClick={() => setSelected(i)}
+              aria-label={photos[i].caption ? `View photo: ${photos[i].caption}` : `View photo ${i + 1}`}
               className="relative aspect-square rounded-2xl overflow-hidden group bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <Image

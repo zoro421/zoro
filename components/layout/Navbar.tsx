@@ -78,7 +78,7 @@ export default function Navbar() {
 
           {/* Mobile menu trigger */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger className="md:hidden cursor-pointer flex items-center justify-center rounded-lg hover:bg-muted transition-colors" style={{ width: 48, height: 48 }}>
+            <SheetTrigger aria-label="Open menu" className="md:hidden cursor-pointer flex items-center justify-center rounded-lg hover:bg-muted transition-colors" style={{ width: 48, height: 48 }}>
               <Menu className="h-8 w-8" />
             </SheetTrigger>
             <SheetContent side="right" className="w-72 flex flex-col p-0">
