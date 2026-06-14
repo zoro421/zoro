@@ -75,9 +75,9 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
         dir={isRtl ? 'rtl' : 'ltr'}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
       >
-        {restaurants.map((r) => (
+        {restaurants.map((r, i) => (
           <div key={r.id} className="snap-start shrink-0 w-[272px] sm:w-[296px]">
-            <RestaurantCard restaurant={r} />
+            <RestaurantCard restaurant={r} priority={i < 2} />
           </div>
         ))}
         <div className="shrink-0 w-8" aria-hidden="true" />

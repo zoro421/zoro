@@ -34,6 +34,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${amiri.variable} h-full antialiased`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+      </head>
       <body className="min-h-full flex flex-col bg-background">
         <Providers>
           {children}

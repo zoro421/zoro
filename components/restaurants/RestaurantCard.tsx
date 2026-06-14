@@ -8,7 +8,7 @@ import ShareButton from './ShareButton'
 import { useLang } from '@/lib/language-context'
 import type { Restaurant } from '@/lib/types'
 
-export default function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
+export default function RestaurantCard({ restaurant, priority = false }: { restaurant: Restaurant; priority?: boolean }) {
   const { t } = useLang()
   const activeOffers = restaurant.offers?.filter((o) => o.is_active && o.is_approved) ?? []
   const topOffer = activeOffers[0]
@@ -32,6 +32,7 @@ export default function RestaurantCard({ restaurant }: { restaurant: Restaurant 
               src={restaurant.cover_image_url}
               alt={restaurant.name}
               fill
+              priority={priority}
               className="object-cover group-hover:scale-[1.04] transition-transform duration-500"
               sizes="(max-width: 640px) 280px, 300px"
             />
