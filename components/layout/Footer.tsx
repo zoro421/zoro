@@ -9,7 +9,7 @@ export default function Footer() {
   const { t } = useLang()
 
   return (
-    <footer className="mt-auto border-t border-border/40 bg-background">
+    <footer className="mt-auto border-t border-border/40 bg-muted/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Mobile: centered stack | Desktop: row */}

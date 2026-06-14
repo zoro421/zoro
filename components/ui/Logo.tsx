@@ -2,27 +2,28 @@ import { BRAND } from '@/lib/brand'
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
+  className?: string
 }
 
 const config = {
-  sm: { arabic: '15px', latin: '11.5px' },
-  md: { arabic: '22px', latin: '17px' },
-  lg: { arabic: '30px', latin: '23px' },
+  sm: { arabic: '18px', latin: '9px' },
+  md: { arabic: '26px', latin: '13px' },
+  lg: { arabic: '36px', latin: '18px' },
 }
 
-export default function Logo({ size = 'md' }: LogoProps) {
+export default function Logo({ size = 'md', className }: LogoProps) {
   const { arabic, latin } = config[size]
 
   return (
-    <div className="flex flex-col items-center select-none shrink-0" style={{ gap: 0 }}>
+    <div className={`flex flex-col items-center select-none shrink-0 ${className ?? ''}`} style={{ gap: '1px' }}>
       <span
         style={{
-          fontFamily: 'var(--font-cairo), sans-serif',
+          fontFamily: 'var(--font-amiri), serif',
           fontSize: arabic,
           fontWeight: 700,
           color: 'var(--foreground)',
-          lineHeight: 1.35,
-          paddingBottom: '0.1em',
+          lineHeight: 1.2,
+          direction: 'rtl',
         }}
       >
         {BRAND.nameAr}
@@ -32,12 +33,13 @@ export default function Logo({ size = 'md' }: LogoProps) {
           fontFamily: 'var(--font-montserrat), sans-serif',
           fontSize: latin,
           fontWeight: 700,
-          letterSpacing: '0.18em',
+          letterSpacing: '0.22em',
           lineHeight: 1,
           color: 'var(--foreground)',
+          textTransform: 'none',
         }}
       >
-        {BRAND.nameDisplay}
+        {BRAND.name}
       </span>
     </div>
   )

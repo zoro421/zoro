@@ -14,7 +14,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Couples", "Business"],
+    "dining_type": [
+      "Fine Dining",
+      "Couples",
+      "Business"
+    ],
     "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
@@ -39,7 +43,10 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Couples"],
+    "dining_type": [
+      "Fine Dining",
+      "Couples"
+    ],
     "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
@@ -64,7 +71,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Business", "Couples"],
+    "dining_type": [
+      "Fine Dining",
+      "Business",
+      "Couples"
+    ],
     "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
@@ -89,7 +100,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Groups", "Couples"],
+    "dining_type": [
+      "Fine Dining",
+      "Groups",
+      "Couples"
+    ],
     "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
@@ -114,7 +129,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Business", "Couples"],
+    "dining_type": [
+      "Fine Dining",
+      "Business",
+      "Couples"
+    ],
     "listing_package": "vip",
     "is_approved": true,
     "is_active": true,
@@ -170,96 +189,6 @@
     ]
   },
   {
-    "id": "f2061c87-308a-4e4b-8f53-02fa80d4f255",
-    "name": "test",
-    "slug": "test",
-    "description": "",
-    "cuisine_type": "",
-    "emirate": "",
-    "address": "",
-    "google_maps_url": "",
-    "phone": "",
-    "instagram": "",
-    "cover_image_url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/1779869915520-9htlv9l1qhf.png",
-    "logo_url": null,
-    "gallery_urls": [],
-    "gallery_items": [],
-    "dining_type": [],
-    "listing_package": "premium",
-    "is_approved": true,
-    "is_active": true,
-    "view_count": 0,
-    "owner_id": null,
-    "created_at": "2026-05-25T00:00:00.000Z",
-    "updated_at": "2026-06-03T00:00:00.000Z",
-    "offers": [
-      {
-        "id": "7ed948b6-514e-4112-bf0f-72e269ecb8b9",
-        "restaurant_id": "f2061c87-308a-4e4b-8f53-02fa80d4f255",
-        "title": "55",
-        "description": null,
-        "deal_type": "percentage",
-        "discount_percentage": null,
-        "valid_from": "2026-05-21",
-        "valid_until": "2026-06-06",
-        "terms": null,
-        "image_url": null,
-        "is_approved": true,
-        "is_active": true,
-        "created_at": "2026-05-21T00:00:00.000Z",
-        "updated_at": "2026-05-21T00:00:00.000Z"
-      }
-    ]
-  },
-  {
-    "id": "91e20bf2-541f-4c49-97a7-2ef5338cf387",
-    "name": "test2",
-    "slug": "test2",
-    "description": "",
-    "cuisine_type": "",
-    "emirate": "",
-    "address": "",
-    "google_maps_url": "",
-    "phone": "",
-    "instagram": "",
-    "cover_image_url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/1779876892492-q5hawrhtuxb.jpeg",
-    "logo_url": null,
-    "gallery_urls": [
-      "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876869620-ok9fs3fthma.png",
-      "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876877733-gwtygpadr35.png",
-      "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876884007-o2psqnpctal.png"
-    ],
-    "gallery_items": [
-      {
-        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876869620-ok9fs3fthma.png",
-        "caption": "kosa",
-        "price_after": 10,
-        "price_before": 20
-      },
-      {
-        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876877733-gwtygpadr35.png",
-        "caption": "rice",
-        "price_after": 15,
-        "price_before": 30
-      },
-      {
-        "url": "https://cqijencsaneewmcujzza.supabase.co/storage/v1/object/public/restaurant-media/gallery/1779876884007-o2psqnpctal.png",
-        "caption": "burger",
-        "price_after": 50,
-        "price_before": 100
-      }
-    ],
-    "dining_type": [],
-    "listing_package": "premium",
-    "is_approved": true,
-    "is_active": true,
-    "view_count": 2,
-    "owner_id": null,
-    "created_at": "2026-05-25T00:00:00.000Z",
-    "updated_at": "2026-06-03T00:00:00.000Z",
-    "offers": []
-  },
-  {
     "id": "prem-001",
     "name": "Hutong Dubai",
     "slug": "hutong-dubai",
@@ -274,7 +203,10 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Groups"],
+    "dining_type": [
+      "Fine Dining",
+      "Groups"
+    ],
     "listing_package": "premium",
     "is_approved": true,
     "is_active": true,
@@ -316,7 +248,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Couples", "Business"],
+    "dining_type": [
+      "Fine Dining",
+      "Couples",
+      "Business"
+    ],
     "listing_package": "premium",
     "is_approved": true,
     "is_active": true,
@@ -358,7 +294,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Couples", "Business"],
+    "dining_type": [
+      "Fine Dining",
+      "Couples",
+      "Business"
+    ],
     "listing_package": "premium",
     "is_approved": true,
     "is_active": true,
@@ -400,7 +340,11 @@
     "logo_url": null,
     "gallery_urls": [],
     "gallery_items": [],
-    "dining_type": ["Fine Dining", "Family", "Couples"],
+    "dining_type": [
+      "Fine Dining",
+      "Family",
+      "Couples"
+    ],
     "listing_package": "premium",
     "is_approved": true,
     "is_active": true,
@@ -419,48 +363,6 @@
         "valid_from": "2026-06-01",
         "valid_until": "2026-08-31",
         "terms": "One drink per guest. Walk-in only. Subject to availability.",
-        "image_url": null,
-        "is_approved": true,
-        "is_active": true,
-        "created_at": "2026-06-01T00:00:00.000Z",
-        "updated_at": "2026-06-01T00:00:00.000Z"
-      }
-    ]
-  },
-  {
-    "id": "prem-005",
-    "name": "Zuma Abu Dhabi",
-    "slug": "zuma-abu-dhabi",
-    "description": "The iconic Japanese izakaya experience lands in Abu Dhabi — robata grill, premium sashimi, and an electric atmosphere on the Corniche.",
-    "cuisine_type": "Japanese",
-    "emirate": "Abu Dhabi",
-    "address": "Nation Towers, Corniche, Abu Dhabi",
-    "google_maps_url": "https://maps.google.com/?q=Zuma+Abu+Dhabi",
-    "phone": "+971 2 401 5900",
-    "instagram": "zumaabudhabi",
-    "cover_image_url": "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=800&q=80",
-    "logo_url": null,
-    "gallery_urls": [],
-    "gallery_items": [],
-    "dining_type": ["Fine Dining", "Business", "Couples"],
-    "listing_package": "premium",
-    "is_approved": true,
-    "is_active": true,
-    "view_count": 9,
-    "owner_id": null,
-    "created_at": "2026-05-30T00:00:00.000Z",
-    "updated_at": "2026-06-03T00:00:00.000Z",
-    "offers": [
-      {
-        "id": "prem-005-o1",
-        "restaurant_id": "prem-005",
-        "title": "25% Off Sunday Brunch",
-        "description": "Walk in any Sunday for brunch and enjoy 25% off the set brunch menu. No reservation, no fuss.",
-        "deal_type": "percentage",
-        "discount_percentage": 25,
-        "valid_from": "2026-06-01",
-        "valid_until": "2026-08-31",
-        "terms": "Sundays only, 12pm–4pm. Walk-in only. Cannot be combined with other promotions.",
         "image_url": null,
         "is_approved": true,
         "is_active": true,

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Cairo, Montserrat } from 'next/font/google'
+import { Geist, Geist_Mono, Montserrat, Amiri } from 'next/font/google'
 import { BRAND } from '@/lib/brand'
 import { Toaster } from '@/components/ui/sonner'
 import { Providers } from '@/components/providers'
@@ -9,8 +9,8 @@ import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
-const cairo = Cairo({ variable: '--font-cairo', subsets: ['arabic', 'latin'], weight: ['700'], display: 'swap' })
 const montserrat = Montserrat({ variable: '--font-montserrat', subsets: ['latin'], weight: ['700'], display: 'swap' })
+const amiri = Amiri({ variable: '--font-amiri', subsets: ['arabic', 'latin'], weight: ['400', '700'], display: 'swap' })
 
 export const metadata: Metadata = {
   title: `${BRAND.name} — Walk-in Deals & Offers in UAE`,
@@ -33,7 +33,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} ${cairo.variable} ${montserrat.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${amiri.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background">
         <Providers>
           {children}

@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 md:h-16 items-center justify-between" style={{ height: 'clamp(4rem, 5vw, 4rem)' }}>
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -78,8 +78,8 @@ export default function Navbar() {
 
           {/* Mobile menu trigger */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-            <SheetTrigger className={cn(buttonVariants({ variant: 'ghost', size: 'icon' }), 'md:hidden cursor-pointer')}>
-              <Menu className="h-5 w-5" />
+            <SheetTrigger className="md:hidden cursor-pointer flex items-center justify-center rounded-lg hover:bg-muted transition-colors" style={{ width: 48, height: 48 }}>
+              <Menu className="h-8 w-8" />
             </SheetTrigger>
             <SheetContent side="right" className="w-72 flex flex-col p-0">
               {/* Header — logo row, then controls row */}
@@ -117,7 +117,7 @@ export default function Navbar() {
                     className={cn(
                       'flex items-center px-3 py-2.5 rounded-xl text-base font-medium transition-colors',
                       pathname === link.href
-                        ? 'bg-primary/10 text-primary'
+                        ? 'bg-[#2E6DA4]/10 text-[#2E6DA4]'
                         : 'text-muted-foreground hover:bg-muted hover:text-foreground'
                     )}
                   >

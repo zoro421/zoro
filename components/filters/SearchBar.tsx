@@ -5,11 +5,13 @@ import { useRef, useEffect, useState } from 'react'
 import { Search, X } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { useLang } from '@/lib/language-context'
 
 export default function SearchBar() {
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const { t } = useLang()
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const q = searchParams.get('q') ?? ''
   const [value, setValue] = useState(q)
@@ -43,7 +45,7 @@ export default function SearchBar() {
       <Input
         value={value}
         onChange={handleChange}
-        placeholder="Search restaurants, cuisines, locations..."
+        placeholder={t.filters.searchPlaceholder}
         className="pl-9 pr-9 h-11 text-sm bg-background"
       />
       {value && (

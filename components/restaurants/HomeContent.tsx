@@ -6,7 +6,6 @@ import { buttonVariants } from '@/components/ui/button'
 import RestaurantCard from './RestaurantCard'
 import { ArrowRight, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLang } from '@/lib/language-context'
-import { PulseFitHero } from '@/components/ui/pulse-fit-hero'
 import { AnimatedHero } from '@/components/ui/animated-hero'
 import type { Restaurant } from '@/lib/types'
 
@@ -37,6 +36,8 @@ function SectionHeader({
 }
 
 function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
+  const { lang } = useLang()
+  const isRtl = lang === 'ar'
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(restaurants.length > 3)
@@ -71,6 +72,7 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
         ref={scrollRef}
         onScroll={updateScrollState}
         className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-4 sm:px-6 lg:px-8 scroll-pl-4 sm:scroll-pl-6 lg:scroll-pl-8 pb-3"
+        dir={isRtl ? 'rtl' : 'ltr'}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
       >
         {restaurants.map((r) => (
@@ -78,8 +80,7 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
             <RestaurantCard restaurant={r} />
           </div>
         ))}
-        {/* Trailing spacer — no snap-start so it never becomes a snap target */}
-        <div className="shrink-0 w-4 sm:w-6 lg:w-8" aria-hidden="true" />
+        <div className="shrink-0 w-8" aria-hidden="true" />
       </div>
 
       {/* Right fade + arrow */}
@@ -114,27 +115,17 @@ function EmptyDeals({ title, subtitle }: { title: string; subtitle: string }) {
 
 export default function HomeContent({ vip, featured, basicRestaurants }: HomeContentProps) {
   const { t } = useLang()
-  const noDeals = vip.length === 0 && featured.length === 0 && basicRestaurants.length === 0
-
-  const vipPrograms = vip.map((r) => ({
-    image: r.cover_image_url ?? `https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80`,
-    category: r.cuisine_type ?? 'Restaurant',
-    title: r.name,
-  }))
+  const allDeals = [...vip, ...featured, ...basicRestaurants]
 
   return (
     <div>
-      {/* Hero with VIP carousel */}
-      <PulseFitHero
-        showHeader={false}
-        programs={vipPrograms}
-        className="pt-14 border-b border-border/40"
-      >
+      {/* Hero */}
+      <section className="border-b border-border/40">
         <AnimatedHero />
-      </PulseFitHero>
+      </section>
 
       {/* Empty state */}
-      {noDeals && (
+      {allDeals.length === 0 && (
         <section className="py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <EmptyDeals title={t.deals.emptyTitle} subtitle={t.deals.emptySubtitle} />
@@ -142,13 +133,13 @@ export default function HomeContent({ vip, featured, basicRestaurants }: HomeCon
         </section>
       )}
 
-      {/* Premium featured section */}
-      {featured.length > 0 && (
-        <section className="py-20 overflow-hidden">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
+      {/* Premium Deals (VIP) */}
+      {vip.length > 0 && (
+        <section className="py-20 overflow-hidden bg-muted/50">
+          <div className="px-4 sm:px-6 lg:px-8 mb-10">
             <SectionHeader
-              title={t.deals.featuredTitle}
-              subtitle={t.deals.featuredSubtitle}
+              title={t.deals.premiumTitle}
+              subtitle={t.deals.premiumSubtitle}
               action={
                 <Link href="/deals" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
                   {t.deals.seeAll} <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
@@ -156,27 +147,25 @@ export default function HomeContent({ vip, featured, basicRestaurants }: HomeCon
               }
             />
           </div>
-          <CardCarousel restaurants={featured} />
+          <CardCarousel restaurants={vip} />
         </section>
       )}
 
-      {/* Basic deals section */}
-      {basicRestaurants.length > 0 && (
-        <section className="py-20 bg-muted/40">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+      {/* All Deals */}
+      {allDeals.length > 0 && (
+        <section className="py-20 overflow-hidden">
+          <div className="px-4 sm:px-6 lg:px-8 mb-10">
             <SectionHeader
-              title={featured.length > 0 ? t.deals.moreDealsTitle : t.deals.activeDealsTitle}
-              subtitle={t.deals.dealsSubtitle}
+              title={t.deals.allDealsTitle}
+              subtitle={t.deals.allDealsSubtitle}
               action={
                 <Link href="/deals" className={buttonVariants({ variant: 'outline', size: 'sm' })}>
-                  {t.deals.browseAll} <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
+                  {t.deals.seeAll} <ArrowRight className="ms-1.5 h-3.5 w-3.5" />
                 </Link>
               }
             />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {basicRestaurants.map((r) => <RestaurantCard key={r.id} restaurant={r} />)}
-            </div>
           </div>
+          <CardCarousel restaurants={allDeals} />
         </section>
       )}
     </div>

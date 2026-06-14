@@ -140,7 +140,7 @@ export default function RestaurantDetail({ restaurant, activeOffers, galleryPhot
               className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'gap-1.5')}
             >
               <AtSign className="h-3.5 w-3.5" />
-              @{restaurant.instagram.replace('@', '')}
+              {restaurant.instagram.replace('@', '')}
             </a>
           )}
         </div>

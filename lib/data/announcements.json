@@ -1,18 +1,18 @@
 [
   {
     "id": "1b840be1-17e7-4a49-9611-da39875f02a2",
-    "message": "find us on instagram @tshkelah.com",
+    "message": "Welcome to Ozwati!",
     "link_url": null,
     "link_label": null,
     "is_active": true,
-    "sort_order": 4
+    "sort_order": 1
   },
   {
     "id": "18f424b3-16f6-4712-aec0-649e4c8f5e30",
-    "message": "the intern is testing the app",
+    "message": "Found a great deal? Share it with your friends and spread the love.",
     "link_url": null,
     "link_label": null,
     "is_active": true,
-    "sort_order": 5
+    "sort_order": 2
   }
 ]

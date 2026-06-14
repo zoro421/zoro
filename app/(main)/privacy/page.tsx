@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import { BRAND } from '@/lib/brand'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Tashkelah',
+  title: `Privacy Policy — ${process.env.NEXT_PUBLIC_APP_NAME}`,
 }
 
 export default function PrivacyPage() {
@@ -9,13 +10,13 @@ export default function PrivacyPage() {
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">Privacy Policy</h1>
-        <p className="text-muted-foreground text-sm">Last updated: June 2025</p>
+        <p className="text-muted-foreground text-sm">Last updated: June 2026</p>
       </div>
 
       <Section title="1. Who We Are">
         <p>
-          Tashkelah is a UAE-based platform that helps diners discover exclusive walk-in offers from restaurants
-          and cafés across the Emirates. When we say "Tashkelah", "we", "us" or "our", we mean the team operating
+          {BRAND.name} is a UAE-based platform that helps diners discover exclusive walk-in offers from restaurants
+          and cafés across the Emirates. When we say &ldquo;{BRAND.name}&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo; or &ldquo;our&rdquo;, we mean the team operating
           this platform.
         </p>
       </Section>
@@ -70,14 +71,18 @@ export default function PrivacyPage() {
         <p>We use the following cookies:</p>
         <ul>
           <li>
-            <strong>ga-consent</strong> — stores your cookie preference (accepted or declined).
-            This cookie is essential for remembering your choice and does not track you.
+            <strong>ga-consent</strong> — stores your cookie preference (&ldquo;accepted&rdquo; or &ldquo;declined&rdquo;).
+            This is a functional cookie required to remember your choice and does not track you.
           </li>
           <li>
             <strong>Google Analytics cookies (_ga, _ga_*)</strong> — set only if you accept analytics cookies.
             These collect anonymous usage data as described above.
           </li>
         </ul>
+        <p>
+          If you decline, Google Analytics still receives anonymous, cookieless signals that Google uses
+          to produce aggregated traffic estimates. No cookies are stored on your device in this case.
+        </p>
       </Section>
 
       <Section title="5. Your Cookie Choices">

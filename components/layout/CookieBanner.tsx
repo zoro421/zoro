@@ -3,15 +3,25 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
+declare function gtag(...args: unknown[]): void
+
 export function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (!localStorage.getItem('cookie-notice-dismissed')) setVisible(true)
+    if (!localStorage.getItem('ga-consent')) setVisible(true)
   }, [])
 
-  function dismiss() {
-    localStorage.setItem('cookie-notice-dismissed', '1')
+  function accept() {
+    localStorage.setItem('ga-consent', 'accepted')
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', { analytics_storage: 'granted' })
+    }
+    setVisible(false)
+  }
+
+  function decline() {
+    localStorage.setItem('ga-consent', 'declined')
     setVisible(false)
   }
 
@@ -26,12 +36,20 @@ export function CookieBanner() {
             Privacy Policy
           </Link>
         </p>
-        <button
-          onClick={dismiss}
-          className="shrink-0 text-sm font-medium text-foreground hover:text-primary transition-colors"
-        >
-          Got it
-        </button>
+        <div className="flex items-center gap-3 shrink-0">
+          <button
+            onClick={decline}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Decline
+          </button>
+          <button
+            onClick={accept}
+            className="text-sm font-medium bg-primary text-primary-foreground px-4 py-1.5 rounded-md hover:opacity-90 transition-opacity"
+          >
+            Accept
+          </button>
+        </div>
       </div>
     </div>
   )
