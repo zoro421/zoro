@@ -6,4 +6,5 @@
 :HL["/_next/static/media/648474ecaeaf4c9a-s.p.0~rf1n5_6ke06.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/797e433ab948586e-s.p.08e28id.o-okb.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(main)","param":null,"prefetchHints":0,"slots":{"children":{"name":"restaurants","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nobu-dubai","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"W8MnBQHyOlsrRCEXB-_u8"}
+:HC"https://images.unsplash.com"
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(main)","param":null,"prefetchHints":0,"slots":{"children":{"name":"restaurants","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"nobu-dubai","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"2ti-FCZ_UeRwWdxczjID1"}
