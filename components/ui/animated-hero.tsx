@@ -24,12 +24,6 @@ export function AnimatedHero() {
   return (
     <div className="relative w-full min-h-[88vh] flex flex-col items-center justify-center overflow-hidden">
 
-      {/* Background gradient blobs */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <div className="absolute top-[-15%] right-[-8%] w-[700px] h-[700px] rounded-full bg-[#2E6DA4]/10 blur-[140px]" />
-        <div className="absolute bottom-[-10%] left-[-8%] w-[600px] h-[600px] rounded-full bg-[#C94040]/8 blur-[120px]" />
-        <div className="absolute top-[35%] left-[25%] w-[400px] h-[400px] rounded-full bg-[#2E6DA4]/5 blur-[100px]" />
-      </div>
 
       {/* Noise texture overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none" aria-hidden>
@@ -60,19 +54,18 @@ export function AnimatedHero() {
           >
             &nbsp;
             {titles.map((title, index) => (
-              <motion.span
+              <span
                 key={index}
                 className="absolute font-bold"
-                initial={{ opacity: 0, y: -100 }}
-                transition={{ type: "spring", stiffness: 50 }}
-                animate={
-                  titleNumber === index
-                    ? { y: 0, opacity: 1 }
-                    : { y: titleNumber > index ? -150 : 150, opacity: 0 }
-                }
+                style={{
+                  opacity: titleNumber === index ? 1 : 0,
+                  transform: `translateY(${titleNumber === index ? 0 : titleNumber > index ? -60 : 60}px)`,
+                  transition: 'opacity 0.4s ease, transform 0.4s ease',
+                  willChange: 'opacity, transform',
+                }}
               >
                 {title}
-              </motion.span>
+              </span>
             ))}
           </span>
 

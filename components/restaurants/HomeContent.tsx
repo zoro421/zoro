@@ -57,12 +57,12 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
     <div className="relative">
       {/* Left fade + arrow */}
       <div
-        className={`absolute left-0 inset-y-0 w-20 bg-gradient-to-r from-background to-transparent z-10 flex items-center transition-opacity duration-200 ${canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute left-0 inset-y-0 w-10 bg-gradient-to-r from-background to-transparent z-10 flex items-center transition-opacity duration-200 pointer-events-none ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`}
       >
         <button
           onClick={() => scroll('left')}
           aria-label="Scroll left"
-          className="ms-4 h-9 w-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors"
+          className="ms-4 h-11 w-11 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors pointer-events-auto"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
@@ -85,12 +85,12 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
 
       {/* Right fade + arrow */}
       <div
-        className={`absolute right-0 inset-y-0 w-20 bg-gradient-to-l from-background to-transparent z-10 flex items-center justify-end transition-opacity duration-200 ${canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`absolute right-0 inset-y-0 w-10 bg-gradient-to-l from-background to-transparent z-10 flex items-center justify-end transition-opacity duration-200 pointer-events-none ${canScrollRight ? 'opacity-100' : 'opacity-0'}`}
       >
         <button
           onClick={() => scroll('right')}
           aria-label="Scroll right"
-          className="me-4 h-9 w-9 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors"
+          className="me-4 h-11 w-11 rounded-full bg-card border border-border shadow-md flex items-center justify-center hover:bg-muted hover:border-primary/30 transition-colors pointer-events-auto"
         >
           <ChevronRight className="h-4 w-4" />
         </button>

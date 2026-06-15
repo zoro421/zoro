@@ -28,21 +28,21 @@ export default function Footer() {
           {/* Links — mobile: stacked centered; desktop: row */}
           <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-12">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground/70 mb-4">{t.footer.explore}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-4">{t.footer.explore}</p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/deals" className="hover:text-[#2E6DA4] transition-colors">{t.footer.browseDeals}</Link></li>
                 <li><Link href="/customers" className="hover:text-[#2E6DA4] transition-colors">{t.nav.customersLink}</Link></li>
               </ul>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground/70 mb-4">{t.footer.restaurants}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-4">{t.footer.restaurants}</p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/business" className="hover:text-[#2E6DA4] transition-colors">{t.nav.businessLink}</Link></li>
                 <li><Link href="/list-your-restaurant" className="hover:text-[#2E6DA4] transition-colors">{t.footer.listRestaurant}</Link></li>
               </ul>
             </div>
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground/70 mb-4">{t.footer.company}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground mb-4">{t.footer.company}</p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="/privacy" className="hover:text-[#2E6DA4] transition-colors">{t.footer.privacy}</Link></li>
                 <li><Link href="/terms" className="hover:text-[#2E6DA4] transition-colors">{t.footer.terms}</Link></li>

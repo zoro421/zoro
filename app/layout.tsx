@@ -34,6 +34,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   ReactDOM.preconnect('https://images.unsplash.com')
+  ReactDOM.prefetchDNS('https://images.unsplash.com')
   return (
     <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${amiri.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-background">
