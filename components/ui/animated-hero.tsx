@@ -1,13 +1,24 @@
 'use client'
 
 import { useEffect, useMemo, useState } from "react"
-import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useLang } from "@/lib/language-context"
 import { OutlineText } from "@/components/ui/outline-text"
+
+const fadeUp = (delay: number, duration = 0.5) => ({
+  opacity: 0,
+  animation: `fade-up ${duration}s ease forwards`,
+  animationDelay: `${delay}s`,
+})
+
+const fadeIn = (delay: number) => ({
+  opacity: 0,
+  animation: `fade-in 0.6s ease forwards`,
+  animationDelay: `${delay}s`,
+})
 
 export function AnimatedHero() {
   const { t } = useLang()
@@ -24,7 +35,6 @@ export function AnimatedHero() {
   return (
     <div className="relative w-full min-h-[88vh] flex flex-col items-center justify-center overflow-hidden">
 
-
       {/* Noise texture overlay */}
       <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none" aria-hidden>
         <filter id="hero-noise">
@@ -38,11 +48,9 @@ export function AnimatedHero() {
       <div className="relative flex flex-col items-center text-center px-4 gap-6 max-w-5xl w-full">
 
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.1 }}
+        <h1
           className="font-bold tracking-[-0.03em] leading-[1.05]"
+          style={fadeUp(0.1, 0.65)}
         >
           <OutlineText className="text-[3.8rem] sm:text-[5.5rem] lg:text-[7rem]">
             {t.hero.heroLine1}
@@ -72,24 +80,20 @@ export function AnimatedHero() {
           <OutlineText className="text-[3.8rem] sm:text-[5.5rem] lg:text-[7rem]">
             {t.hero.heroLine3}
           </OutlineText>
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.25 }}
+        <p
           className="text-muted-foreground text-lg sm:text-xl leading-relaxed max-w-[580px]"
+          style={fadeUp(0.25)}
         >
           {t.hero.subtitle}
-        </motion.p>
+        </p>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
+        <div
           className="flex flex-col sm:flex-row items-center gap-4"
+          style={fadeUp(0.35)}
         >
           <Link
             href="/deals"
@@ -102,21 +106,19 @@ export function AnimatedHero() {
           <Link href="/business" className={cn(buttonVariants({ size: "lg", variant: "outline" }), "gap-2 backdrop-blur-sm")}>
             {t.hero.listRestaurant}
           </Link>
-        </motion.div>
+        </div>
 
         {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+        <div
           className="flex items-center gap-6 text-sm text-muted-foreground pt-2"
+          style={fadeIn(0.5)}
         >
           <span>{t.hero.statDeals}</span>
           <span className="w-px h-4 bg-border" />
           <span>{t.hero.statCuisines}</span>
           <span className="w-px h-4 bg-border" />
           <span>{t.hero.statUpdated}</span>
-        </motion.div>
+        </div>
 
       </div>
     </div>

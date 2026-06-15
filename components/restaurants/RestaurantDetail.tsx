@@ -64,7 +64,7 @@ export default function RestaurantDetail({ restaurant, activeOffers, galleryPhot
             />
           ) : (
             <Image
-              src={restaurant.cover_image_url}
+              src={restaurant.cover_image_url.replace('w=400', 'w=900')}
               alt={restaurant.name}
               fill
               className="object-cover"
