@@ -30,6 +30,7 @@ export default function ListYourRestaurantPage() {
           <Link
             href={`mailto:${BRAND.email}`}
             className={buttonVariants({ size: 'lg' })}
+            style={{ background: '#1a1a1a', borderColor: '#1a1a1a' }}
           >
             <Mail className="h-4 w-4 mr-2" />
             {BRAND.email}

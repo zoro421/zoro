@@ -115,8 +115,6 @@ export function AnimatedHero() {
         >
           <span>{t.hero.statDeals}</span>
           <span className="w-px h-4 bg-border" />
-          <span>{t.hero.statCuisines}</span>
-          <span className="w-px h-4 bg-border" />
           <span>{t.hero.statUpdated}</span>
         </div>
 
