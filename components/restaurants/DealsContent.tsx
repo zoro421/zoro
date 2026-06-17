@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { UtensilsCrossed, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import RestaurantCard from './RestaurantCard'
 import { useLang } from '@/lib/language-context'
@@ -52,7 +52,7 @@ export default function DealsContent({
       ) : (
         <div className="flex flex-col items-center justify-center py-24 gap-4 text-center">
           <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center">
-            <UtensilsCrossed className="h-7 w-7 text-muted-foreground/50" />
+            <Search className="h-7 w-7 text-muted-foreground/50" />
           </div>
           <div className="space-y-1.5">
             <p className="text-xl font-semibold">{t.dealsPage.noDealsTitle}</p>

@@ -102,8 +102,8 @@ function CardCarousel({ restaurants }: { restaurants: Restaurant[] }) {
 function EmptyDeals({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-      <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-        <Search className="h-7 w-7 text-primary/60" />
+      <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center">
+        <Search className="h-7 w-7 text-muted-foreground/50" />
       </div>
       <div className="space-y-2 max-w-sm">
         <p className="font-semibold text-xl">{title}</p>
