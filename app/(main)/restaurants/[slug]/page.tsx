@@ -8,8 +8,11 @@ interface PageProps {
   params: Promise<{ slug: string }>
 }
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
-  return restaurants.map((r) => ({ slug: r.slug }))
+  const slugs = restaurants.map((r) => ({ slug: r.slug }))
+  return slugs.length > 0 ? slugs : [{ slug: '_' }]
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
