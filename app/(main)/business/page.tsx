@@ -5,6 +5,9 @@ import BusinessContent from '@/components/restaurants/BusinessContent'
 export const metadata: Metadata = {
   title: `For Businesses — ${BRAND.name}`,
   description: `List your place on ${BRAND.name} and get discovered by thousands of UAE visitors looking for walk-in deals.`,
+  alternates: {
+    canonical: `${BRAND.url}/business`,
+  },
 }
 
 export default function BusinessPage() {

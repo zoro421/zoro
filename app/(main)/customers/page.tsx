@@ -5,6 +5,9 @@ import { BRAND } from '@/lib/brand'
 export const metadata: Metadata = {
   title: `Customers — ${BRAND.name}`,
   description: 'Discover walk-in deals across the UAE for free. No app, no registration, no vouchers needed.',
+  alternates: {
+    canonical: `${BRAND.url}/customers`,
+  },
 }
 
 export default function CustomersPage() {
