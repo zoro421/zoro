@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import RestaurantDetail from '@/components/restaurants/RestaurantDetail'
 import { restaurants } from '@/lib/data'
+import { BRAND } from '@/lib/brand'
 import type { Metadata } from 'next'
 import type { GalleryItem } from '@/lib/types'
 
@@ -19,14 +20,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const restaurant = restaurants.find((r) => r.slug === slug)
 
-  if (!restaurant) return { title: 'Restaurant not found' }
+  // Phantom/placeholder route (e.g. the `_` fallback when no listings exist) or any
+  // unmatched slug: keep it out of the index instead of shipping a crawlable 404.
+  if (!restaurant) return { title: 'Restaurant not found', robots: { index: false, follow: false } }
+
+  const canonical = `${BRAND.url}/restaurants/${restaurant.slug}`
 
   return {
-    title: `${restaurant.name} Deals — Tashkelah UAE`,
+    title: `${restaurant.name} Deals — ${BRAND.name} UAE`,
     description: restaurant.description ?? `Discover walk-in offers at ${restaurant.name} in ${restaurant.emirate ?? 'UAE'}.`,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       title: `${restaurant.name} — Walk-in Deals`,
       description: restaurant.description ?? `Exclusive walk-in offers at ${restaurant.name}.`,
+      type: 'website',
+      url: canonical,
       ...(restaurant.cover_image_url ? { images: [{ url: restaurant.cover_image_url }] } : {}),
     },
   }
